@@ -1,97 +1,136 @@
-"use client";
-
-import Image from "next/image";
-import { motion } from "motion/react";
-
 export default function Hero() {
   return (
-    <section className="h-screen bg-white flex flex-col overflow-hidden relative">
+    <section id="hero" style={{
+      minHeight: "100vh",
+      background: "#0B1628",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "flex-start",
+      padding: "0 10vw",
+      position: "relative",
+      overflow: "hidden",
+      paddingTop: "109px",
+    }}>
+      {/* Subtle gold vertical line */}
+      <div style={{
+        position: "absolute",
+        left: "8vw",
+        top: "20%",
+        bottom: "20%",
+        width: 1,
+        background: "linear-gradient(to bottom, transparent, #C9A96E, transparent)",
+        opacity: 0.4,
+      }} />
 
-      {/* Main grid */}
-      <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 min-h-0">
+      {/* Background pattern overlay */}
+      <div style={{
+        position: "absolute",
+        inset: 0,
+        backgroundImage: "radial-gradient(circle at 70% 50%, rgba(201,169,110,0.05) 0%, transparent 60%)",
+        pointerEvents: "none",
+      }} />
 
-        {/* LEFT — text */}
-        <div className="flex flex-col justify-center px-6 sm:px-10 md:px-14 lg:px-20 py-12 relative z-20">
-
-          {/* Location tag */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="inline-flex items-center gap-2 mb-8"
-          >
-            <span className="w-4 h-px bg-[#2A5240]" />
-            <span className="text-[10px] uppercase tracking-[0.28em] text-[#2A5240]">[Suburb] · [City]</span>
-          </motion.div>
-
-          {/* Headline */}
-          <motion.h1
-            initial={{ opacity: 0, y: 22 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.2 }}
-            className="font-display font-light leading-[1.08] tracking-tight text-[#1A2B2B] mb-6"
-            style={{ fontSize: "clamp(2.6rem, 6vw, 4.5rem)" }}
-          >
-            A home for
-            <br />
-            <em className="italic text-[#2A5240]">your practice.</em>
-          </motion.h1>
-
-          {/* Subtext */}
-          <motion.div
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.35 }}
-            className="space-y-1 mb-10"
-          >
-            <p className="text-sm text-[#6B7A7A] font-light leading-relaxed">
-              Intimate yoga classes with [Instructor Name].
-            </p>
-            <p className="text-sm text-[#6B7A7A] font-light leading-relaxed">
-              Private sessions &amp; small group classes. All levels welcome.
-            </p>
-          </motion.div>
-
-          {/* Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.5 }}
-            className="flex flex-row gap-3"
-          >
-            <a
-              href="#contact"
-              className="bg-[#1A2B2B] text-white px-6 sm:px-8 py-3.5 text-xs uppercase tracking-[0.15em] hover:bg-[#2A5240] transition-colors duration-300"
-            >
-              Book a Class
-            </a>
-            <a
-              href="#about"
-              className="border border-[#C4C0BA] text-[#1A2B2B] px-6 sm:px-8 py-3.5 text-xs uppercase tracking-[0.15em] hover:border-[#2A5240] hover:text-[#2A5240] transition-colors duration-300"
-            >
-              Learn More
-            </a>
-          </motion.div>
+      <div style={{ position: "relative", maxWidth: 780 }}>
+        <div style={{
+          fontSize: 11,
+          letterSpacing: "0.22em",
+          color: "#C9A96E",
+          fontWeight: 600,
+          marginBottom: 28,
+          fontFamily: "var(--font-sans), system-ui, sans-serif",
+        }}>
+          TEAM UPHAUS | RENT IT FURNISHED REALTY
         </div>
 
-        {/* RIGHT — photo (desktop only) */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.15 }}
-          className="relative hidden lg:block"
-        >
-          <Image
-            src="/490067908_18307666102237707_4229634514786476192_n.jpg"
-            alt="Yoga studio interior"
-            fill
-            priority
-            sizes="50vw"
-            className="object-cover object-center"
-          />
-          <div className="absolute inset-y-0 left-0 w-px bg-[#E0DDD8]" />
-        </motion.div>
+        <h1 style={{
+          fontFamily: "var(--font-display), Georgia, serif",
+          fontSize: "clamp(42px, 6vw, 80px)",
+          fontWeight: 300,
+          color: "#FAFAF8",
+          lineHeight: 1.12,
+          margin: "0 0 24px 0",
+          letterSpacing: "-0.01em",
+        }}>
+          Buy with a builder&apos;s mind.<br />
+          <em style={{ color: "#C9A96E", fontStyle: "italic" }}>Invest with a designer&apos;s eye.</em>
+        </h1>
 
+        <p style={{
+          fontSize: 16,
+          color: "rgba(250,250,248,0.65)",
+          lineHeight: 1.75,
+          maxWidth: 520,
+          margin: "0 0 48px 0",
+          fontFamily: "var(--font-sans), system-ui, sans-serif",
+        }}>
+          17 years spanning design, construction, and development. A rare perspective that gives you an edge before you sign.
+        </p>
+
+        <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
+          <a href="#contact" style={{
+            background: "#C9A96E",
+            color: "#0B1628",
+            padding: "14px 36px",
+            fontSize: 12,
+            letterSpacing: "0.14em",
+            fontWeight: 700,
+            textDecoration: "none",
+            display: "inline-block",
+            transition: "opacity 0.2s",
+          }}>
+            WORK WITH VIC
+          </a>
+          <a href="#about" style={{
+            border: "1px solid rgba(201,169,110,0.4)",
+            color: "#C9A96E",
+            padding: "14px 36px",
+            fontSize: 12,
+            letterSpacing: "0.14em",
+            fontWeight: 600,
+            textDecoration: "none",
+            display: "inline-block",
+          }}>
+            LEARN MORE
+          </a>
+        </div>
+      </div>
+
+      {/* Bottom stats bar */}
+      <div style={{
+        position: "absolute",
+        bottom: 0,
+        left: 0,
+        right: 0,
+        borderTop: "1px solid rgba(201,169,110,0.15)",
+        display: "flex",
+        justifyContent: "center",
+        gap: 80,
+        padding: "28px 40px",
+        background: "rgba(11,22,40,0.8)",
+      }}>
+        {[
+          { num: "17+", label: "Years Experience" },
+          { num: "PMP", label: "Certified" },
+          { num: "$5M", label: "Renovation Coverage" },
+        ].map(stat => (
+          <div key={stat.num} style={{ textAlign: "center" }}>
+            <div style={{
+              fontFamily: "var(--font-display), Georgia, serif",
+              fontSize: 28,
+              fontWeight: 400,
+              color: "#C9A96E",
+              lineHeight: 1,
+            }}>{stat.num}</div>
+            <div style={{
+              fontSize: 10,
+              letterSpacing: "0.16em",
+              color: "rgba(250,250,248,0.45)",
+              marginTop: 6,
+              fontFamily: "var(--font-sans), system-ui, sans-serif",
+            }}>{stat.label.toUpperCase()}</div>
+          </div>
+        ))}
       </div>
     </section>
   );

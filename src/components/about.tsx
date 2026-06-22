@@ -1,67 +1,83 @@
-"use client";
-
-import Image from "next/image";
-import { motion } from "motion/react";
-
 export default function About() {
   return (
-    <section id="about" className="bg-[#F7F5F1]">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12 py-20 md:py-32">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
-
-          {/* Image */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.8 }}
-            className="relative"
-          >
-            <div className="absolute inset-0 translate-x-3 translate-y-3 sm:translate-x-4 sm:translate-y-4 bg-[#2A5240]/8" />
-            <div className="relative h-[340px] sm:h-[420px] lg:h-[500px] overflow-hidden">
-              <Image
-                src="/yoga-with-pack-yosana.jpg"
-                alt="Yoga instructor"
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover object-top"
-              />
+    <section id="about" style={{
+      background: "#FAFAF8",
+      padding: "120px 10vw",
+    }}>
+      <div style={{
+        maxWidth: 1200,
+        margin: "0 auto",
+        display: "grid",
+        gridTemplateColumns: "1fr 1fr",
+        gap: "80px",
+        alignItems: "center",
+      }}>
+        {/* Image placeholder */}
+        <div style={{
+          aspectRatio: "4/5",
+          background: "#EAE8E4",
+          position: "relative",
+          overflow: "hidden",
+        }}>
+          <div style={{
+            position: "absolute",
+            inset: 0,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            flexDirection: "column",
+            gap: 8,
+            color: "#7A7A7A",
+            fontSize: 12,
+            letterSpacing: "0.1em",
+          }}>
+            <div style={{ width: 40, height: 40, border: "1px solid #C9A96E", display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <svg width="20" height="20" fill="none" stroke="#C9A96E" strokeWidth="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
             </div>
-          </motion.div>
+            AGENT PHOTO
+          </div>
+          {/* Gold corner accent */}
+          <div style={{ position: "absolute", top: 20, left: 20, width: 60, height: 60, borderTop: "1px solid #C9A96E", borderLeft: "1px solid #C9A96E" }} />
+          <div style={{ position: "absolute", bottom: 20, right: 20, width: 60, height: 60, borderBottom: "1px solid #C9A96E", borderRight: "1px solid #C9A96E" }} />
+        </div>
 
-          {/* Text */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-8 h-px bg-[#2A5240]" />
-              <p className="text-[10px] uppercase tracking-[0.3em] text-[#2A5240]">Meet [Instructor Name]</p>
-            </div>
+        {/* Text */}
+        <div>
+          <div style={{ fontSize: 10, letterSpacing: "0.22em", color: "#C9A96E", fontWeight: 600, marginBottom: 20, fontFamily: "system-ui, sans-serif" }}>
+            ABOUT VIC
+          </div>
+          <h2 style={{
+            fontFamily: "var(--font-display), Georgia, serif",
+            fontSize: "clamp(32px, 3.5vw, 52px)",
+            fontWeight: 400,
+            color: "#0B1628",
+            lineHeight: 1.15,
+            margin: "0 0 32px 0",
+          }}>
+            Three disciplines.<br />One perspective.
+          </h2>
+          <p style={{ fontSize: 15, lineHeight: 1.8, color: "#4A4A4A", marginBottom: 20, fontFamily: "system-ui, sans-serif" }}>
+            Vic Cheung brings a rare combination of expertise to every transaction: the structural eye of a builder, the spatial intelligence of an interior designer, and the financial rigour of a development manager.
+          </p>
+          <p style={{ fontSize: 15, lineHeight: 1.8, color: "#4A4A4A", marginBottom: 20, fontFamily: "system-ui, sans-serif" }}>
+            With a background as Senior Designer at Northland Properties (Sutton Place Hotels) and Development Manager at Pinnacle International, Vic has spent 17 years navigating complex projects — so your property purchase is in experienced hands.
+          </p>
+          <p style={{ fontSize: 15, lineHeight: 1.8, color: "#4A4A4A", marginBottom: 40, fontFamily: "system-ui, sans-serif" }}>
+            PMP-certified and backed by $5M in liability coverage through My Project Team Management Corp., Vic offers unmatched post-purchase support through every stage of renovation and delivery.
+          </p>
 
-            <h2 className="font-display font-light text-3xl sm:text-4xl md:text-5xl text-[#1A2B2B] leading-[1.15] mb-7">
-              Welcome to{" "}
-              <br className="hidden sm:block" />
-              <em className="italic text-[#2A5240]">[Studio Name].</em>
-            </h2>
-
-            <div className="space-y-5 text-sm text-[#6B7A7A] font-light leading-[1.9]">
-              <p>
-                [Studio Name] was created by <strong className="text-[#1A2B2B] font-normal">[Instructor Name]</strong>. A yoga specialist based in [Suburb, State], what began as a deeply personal practice grew into a quiet, intentional space where others could experience yoga the way it was always meant to feel: unhurried, attentive, and genuinely caring.
-              </p>
-              <p>
-                [Instructor Name] brings a rare quality to their teaching. They watch carefully, reading each body with patience and precision, adjusting postures with a gentle hand and meeting every student exactly where they are. Whether you have practised for years or are stepping onto a mat for the very first time, they have a gift for making you feel seen.
-              </p>
-              <p>
-                The studio is kept deliberately small, because [Instructor Name] believes that real yoga cannot happen in a crowd. It happens in the space between breath and stillness, when a teacher is truly present with you.
-              </p>
-              <p>
-                This is that space.
-              </p>
-            </div>
-          </motion.div>
+          <div style={{ display: "flex", gap: 40 }}>
+            {[
+              { label: "Interior Design", icon: "◇" },
+              { label: "Construction", icon: "◆" },
+              { label: "Development", icon: "◈" },
+            ].map(item => (
+              <div key={item.label} style={{ textAlign: "center" }}>
+                <div style={{ fontSize: 20, color: "#C9A96E", marginBottom: 6 }}>{item.icon}</div>
+                <div style={{ fontSize: 10, letterSpacing: "0.12em", color: "#7A7A7A", fontFamily: "system-ui, sans-serif" }}>{item.label.toUpperCase()}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

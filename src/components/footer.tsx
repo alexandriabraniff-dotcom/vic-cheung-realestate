@@ -1,32 +1,62 @@
+"use client";
 export default function Footer() {
-  const year = new Date().getFullYear();
   return (
-    <footer className="bg-[#F7F5F1] border-t border-[#E0DDD8]">
+    <footer style={{
+      background: "#060E1A",
+      padding: "60px 10vw 40px",
+      borderTop: "1px solid rgba(201,169,110,0.15)",
+    }}>
+      <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 48, flexWrap: "wrap", gap: 32 }}>
+          <div>
+            <div style={{ fontFamily: "var(--font-display), Georgia, serif", fontSize: 22, fontWeight: 500, color: "#FAFAF8", letterSpacing: "0.05em" }}>
+              VIC CHEUNG
+            </div>
+            <div style={{ fontSize: 10, color: "#C9A96E", letterSpacing: "0.18em", marginTop: 4, fontFamily: "system-ui, sans-serif" }}>
+              REALTOR® | TEAM UPHAUS | RENT IT FURNISHED REALTY
+            </div>
+            <p style={{ fontSize: 13, color: "rgba(250,250,248,0.4)", marginTop: 16, maxWidth: 300, lineHeight: 1.7, fontFamily: "system-ui, sans-serif" }}>
+              Buy with a builder&apos;s mind. Invest with a designer&apos;s eye. Serving Vancouver and surrounding areas.
+            </p>
+          </div>
 
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12 py-10 md:py-12">
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 sm:gap-8 mb-8 md:mb-10">
-          <p className="tracking-[0.3em] text-sm font-light text-[#2A5240] uppercase">[STUDIO NAME]</p>
-
-          <nav className="flex flex-wrap gap-5 sm:gap-8">
-            {["About", "Classes", "Pricing", "Contact"].map((item) => (
-              <a key={item} href={`#${item.toLowerCase()}`}
-                className="text-[10px] uppercase tracking-[0.2em] text-[#6B7A7A] hover:text-[#2A5240] transition-colors">
-                {item}
-              </a>
+          <div style={{ display: "flex", gap: 60 }}>
+            {[
+              { heading: "Navigate", links: ["About", "Services", "Testimonials", "Contact"] },
+              { heading: "Services", links: ["Buyer Representation", "Investment Advisory", "Project Management"] },
+              { heading: "Connect", links: ["Instagram", "YouTube", "Facebook", "Twitter"] },
+            ].map(col => (
+              <div key={col.heading}>
+                <div style={{ fontSize: 10, letterSpacing: "0.18em", color: "#C9A96E", fontWeight: 600, marginBottom: 16, fontFamily: "system-ui, sans-serif" }}>
+                  {col.heading.toUpperCase()}
+                </div>
+                {col.links.map(link => (
+                  <div key={link} style={{ marginBottom: 10 }}>
+                    <a href="#" style={{ fontSize: 13, color: "rgba(250,250,248,0.45)", textDecoration: "none", fontFamily: "system-ui, sans-serif" }}>
+                      {link}
+                    </a>
+                  </div>
+                ))}
+              </div>
             ))}
-          </nav>
-
-          <div className="flex gap-5 sm:gap-6">
-            <a href="#"
-              className="text-[10px] uppercase tracking-[0.2em] text-[#6B7A7A] hover:text-[#2A5240] transition-colors">Instagram</a>
-            <a href="#"
-              className="text-[10px] uppercase tracking-[0.2em] text-[#6B7A7A] hover:text-[#2A5240] transition-colors">Facebook</a>
           </div>
         </div>
 
-        <div className="pt-7 md:pt-8 border-t border-[#E0DDD8] text-[10px] text-[#B0B8B8] flex flex-col sm:flex-row justify-between gap-2 uppercase tracking-widest">
-          <p>&copy; {year} [Studio Name]</p>
-          <p>Yoga Studio · All Levels Welcome</p>
+        <div style={{
+          borderTop: "1px solid rgba(250,250,248,0.08)",
+          paddingTop: 28,
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          flexWrap: "wrap",
+          gap: 12,
+        }}>
+          <div style={{ fontSize: 11, color: "rgba(250,250,248,0.25)", fontFamily: "system-ui, sans-serif" }}>
+            © {new Date().getFullYear()} Vic Cheung. All rights reserved. REALTOR® is a trademark of CREA.
+          </div>
+          <div style={{ fontSize: 11, color: "rgba(250,250,248,0.25)", fontFamily: "system-ui, sans-serif" }}>
+            Website designed by Alexandria Braniff
+          </div>
         </div>
       </div>
     </footer>

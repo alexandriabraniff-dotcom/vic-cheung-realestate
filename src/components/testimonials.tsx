@@ -1,75 +1,86 @@
-"use client";
-
-import { motion } from "motion/react";
-
-const testimonials = [
-  {
-    quote: "[Client quote — instructor's patience, careful attention, personalised adjustments.]",
-    name: "[Client Name]",
-    rotate: "-1.5deg",
-    bg: "#FEFCE8",
-  },
-  {
-    quote: "[Client quote — welcoming atmosphere, beginner-friendly, personal studio setting.]",
-    name: "[Client Name]",
-    rotate: "1.2deg",
-    bg: "#F0FDF4",
-  },
-  {
-    quote: "[Client quote — feeling of physical and mental transformation after sessions.]",
-    name: "[Client Name]",
-    rotate: "-0.8deg",
-    bg: "#FFF7ED",
-  },
-];
-
 export default function Testimonials() {
+  const testimonials = [
+    {
+      name: "Ali Golriz",
+      role: "Repeat Client",
+      quote: "Professional and hard-working across multiple transactions. Vic's knowledge of construction gave us a real edge in evaluating properties — we avoided two bad deals and found exactly what we were looking for.",
+      stars: 5,
+    },
+    {
+      name: "Jillian Bice",
+      role: "First-Time Buyer",
+      quote: "Incredibly helpful and professional throughout the entire process. Vic was always responsive and made sure we understood every step. We couldn't have asked for a better guide.",
+      stars: 5,
+    },
+    {
+      name: "Vancouver Client",
+      role: "Investment Property",
+      quote: "Vic's financial modelling on the rental yield was what sold us. He ran full projections before we even put in an offer. That level of detail is rare to find in a realtor.",
+      stars: 5,
+    },
+  ];
+
   return (
-    <section id="testimonials" className="bg-[#F7F5F1] py-20 md:py-32">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
+    <section id="testimonials" style={{
+      background: "#FAFAF8",
+      padding: "120px 10vw",
+    }}>
+      <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+        <div style={{ fontSize: 10, letterSpacing: "0.22em", color: "#C9A96E", fontWeight: 600, marginBottom: 20, fontFamily: "system-ui, sans-serif" }}>
+          TESTIMONIALS
+        </div>
+        <h2 style={{
+          fontFamily: "var(--font-display), Georgia, serif",
+          fontSize: "clamp(32px, 3.5vw, 52px)",
+          fontWeight: 400,
+          color: "#0B1628",
+          margin: "0 0 64px 0",
+          lineHeight: 1.15,
+        }}>
+          Words from clients<br />who know the difference.
+        </h2>
 
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.65 }}
-          className="mb-14 md:mb-20"
-        >
-          <div className="flex items-center gap-3 mb-5">
-            <div className="w-8 h-px bg-[#2A5240]" />
-            <p className="text-[10px] uppercase tracking-[0.3em] text-[#2A5240]">Kind Words</p>
-          </div>
-          <h2 className="font-display font-light text-3xl sm:text-4xl md:text-5xl text-[#1A2B2B] leading-[1.1]">
-            From those who{" "}
-            <em className="italic text-[#2A5240]">practise here.</em>
-          </h2>
-        </motion.div>
-
-        {/* Post-it grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 32 }}>
           {testimonials.map((t, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 30, rotate: 0 }}
-              whileInView={{ opacity: 1, y: 0, rotate: t.rotate }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.6, delay: i * 0.12, ease: "easeOut" }}
-              whileHover={{ rotate: "0deg", y: -6, transition: { duration: 0.25 } }}
-              className="relative shadow-[0_4px_24px_rgba(0,0,0,0.10)] cursor-default"
-              style={{ backgroundColor: t.bg, transform: `rotate(${t.rotate})` }}
-            >
-              {/* Pin dot */}
-              <div className="absolute top-4 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-[#2A5240]/20 shadow-inner" />
-
-              <div className="px-7 pt-10 pb-9">
-                {/* Quote mark */}
-                <span className="font-display text-3xl text-[#2A5240]/20 leading-none block mb-3 select-none">&ldquo;</span>
-                <p className="font-display font-light text-base text-[#3A3A3A] leading-[1.75] italic">
-                  {t.quote}
-                </p>
+            <div key={i} style={{
+              background: "#FFFFFF",
+              padding: "40px 36px",
+              borderLeft: "1px solid #E0DDD8",
+              position: "relative",
+            }}>
+              {/* Gold quote mark */}
+              <div style={{
+                fontFamily: "Georgia, serif",
+                fontSize: 72,
+                color: "#C9A96E",
+                lineHeight: 0.8,
+                opacity: 0.3,
+                marginBottom: 16,
+                userSelect: "none",
+              }}>&ldquo;</div>
+              <p style={{
+                fontSize: 15,
+                lineHeight: 1.8,
+                color: "#333",
+                margin: "0 0 28px 0",
+                fontStyle: "italic",
+                fontFamily: "var(--font-display), Georgia, serif",
+              }}>
+                {t.quote}
+              </p>
+              {/* Stars */}
+              <div style={{ display: "flex", gap: 3, marginBottom: 14 }}>
+                {Array.from({ length: t.stars }).map((_, s) => (
+                  <span key={s} style={{ color: "#C9A96E", fontSize: 12 }}>★</span>
+                ))}
               </div>
-            </motion.div>
+              <div style={{ fontSize: 13, fontWeight: 600, color: "#0B1628", letterSpacing: "0.06em", fontFamily: "system-ui, sans-serif" }}>
+                {t.name}
+              </div>
+              <div style={{ fontSize: 11, color: "#7A7A7A", letterSpacing: "0.1em", marginTop: 3, fontFamily: "system-ui, sans-serif" }}>
+                {t.role.toUpperCase()}
+              </div>
+            </div>
           ))}
         </div>
       </div>

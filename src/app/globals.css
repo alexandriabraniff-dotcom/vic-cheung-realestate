@@ -21,75 +21,34 @@
 }
 
 :root {
-  /* Warm white base */
   --background: #FAFAF8;
-  --foreground: #1A2B2B;
-
-  /* Brand teal (from logo) */
-  --primary: #2A5240;
+  --foreground: #0D1117;
+  --primary: #0B1628;
   --primary-foreground: #FAFAF8;
-
-  /* Soft off-white surface */
   --secondary: #F4F2EE;
-  --secondary-foreground: #2A3D3D;
-
-  /* Muted warm grey */
+  --secondary-foreground: #0D1117;
   --muted: #EAE8E4;
-  --muted-foreground: #6B7A7A;
-
-  /* Warm sand accent */
-  --accent: #C4A882;
-  --accent-foreground: #1A2B2B;
-
-  /* Borders */
+  --muted-foreground: #7A7A7A;
+  --accent: #C9A96E;
+  --accent-foreground: #0D1117;
   --border: #E0DDD8;
-
-  /* Card */
   --card: #FFFFFF;
-  --card-foreground: #1A2B2B;
-
-  --radius: 0.75rem;
+  --card-foreground: #0D1117;
+  --radius: 0rem;
 }
 
 @layer base {
-  * {
-    box-sizing: border-box;
-  }
-
-  html {
-    scroll-behavior: smooth;
-  }
-
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
   body {
     background-color: var(--background);
     color: var(--foreground);
     font-family: var(--font-sans), system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    margin: 0;
   }
-
   h1, h2, h3, h4 {
-    font-family: var(--font-display), serif;
+    font-family: var(--font-display), Georgia, serif;
   }
-}
-
-/* Leaf SVG texture utility */
-.leaf-texture {
-  position: relative;
-  overflow: hidden;
-}
-
-.leaf-texture::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpath d='M20 100 Q60 20 100 60 Q60 80 20 100Z' fill='%232A5240' opacity='0.04'/%3E%3Cpath d='M0 80 Q40 10 80 50 Q40 70 0 80Z' fill='%232A5240' opacity='0.03'/%3E%3C/svg%3E");
-  background-size: 120px 120px;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.leaf-texture > * {
-  position: relative;
-  z-index: 1;
 }
