@@ -1,26 +1,42 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Nav() {
+  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 60);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   const links = [
     { label: "About", href: "#about" },
-    { label: "Listings", href: "#listings" },
+    { label: "Listings", href: "/listings" },
     { label: "Neighbourhoods", href: "#neighbourhoods" },
     { label: "Testimonials", href: "#testimonials" },
     { label: "Contact", href: "#contact" },
   ];
 
+  const bg = scrolled ? "rgba(250,250,248,0.97)" : "transparent";
+  const border = scrolled ? "1px solid #E0DDD8" : "1px solid rgba(255,255,255,0.08)";
+  const logoColor = scrolled ? "#0B1628" : "#FAFAF8";
+  const linkColor = scrolled ? "#0D1117" : "rgba(250,250,248,0.88)";
+  const hamColor = scrolled ? "#0B1628" : "#FAFAF8";
+
   return (
-    <nav className={open ? "nav-mobile-open" : ""} style={{
+    <nav style={{
       position: "fixed",
       top: "37px",
       left: 0,
       right: 0,
       zIndex: 1000,
-      background: "rgba(250,250,248,0.96)",
-      backdropFilter: "blur(10px)",
-      borderBottom: "1px solid #E0DDD8",
+      background: bg,
+      backdropFilter: scrolled ? "blur(10px)" : "none",
+      borderBottom: border,
+      transition: "background 0.3s, border-color 0.3s",
     }}>
       <div style={{
         maxWidth: 1280,
@@ -30,11 +46,17 @@ export default function Nav() {
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
-        position: "relative",
       }}>
         {/* Logo */}
-        <a href="#hero" style={{ textDecoration: "none" }}>
-          <div style={{ fontFamily: "var(--font-display), Georgia, serif", fontSize: 19, fontWeight: 500, color: "#0B1628", letterSpacing: "0.05em" }}>
+        <a href="/" style={{ textDecoration: "none" }}>
+          <div style={{
+            fontFamily: "var(--font-display), Georgia, serif",
+            fontSize: 19,
+            fontWeight: 500,
+            color: logoColor,
+            letterSpacing: "0.05em",
+            transition: "color 0.3s",
+          }}>
             VIC CHEUNG
           </div>
           <div style={{ fontSize: 9, color: "#C9A96E", letterSpacing: "0.2em", fontWeight: 500, marginTop: 1 }}>
@@ -51,13 +73,13 @@ export default function Nav() {
               style={{
                 fontSize: 11,
                 letterSpacing: "0.14em",
-                color: "#0D1117",
+                color: linkColor,
                 textDecoration: "none",
                 fontWeight: 500,
                 transition: "color 0.2s",
               }}
               onMouseOver={e => (e.currentTarget.style.color = "#C9A96E")}
-              onMouseOut={e => (e.currentTarget.style.color = "#0D1117")}
+              onMouseOut={e => (e.currentTarget.style.color = linkColor)}
             >
               {l.label.toUpperCase()}
             </a>
@@ -65,19 +87,20 @@ export default function Nav() {
           <a
             href="#contact"
             style={{
-              background: "#0B1628",
+              background: scrolled ? "#0B1628" : "rgba(201,169,110,0.12)",
               color: "#C9A96E",
+              border: "1px solid rgba(201,169,110,0.45)",
               padding: "10px 22px",
               fontSize: 11,
               letterSpacing: "0.14em",
               fontWeight: 600,
               textDecoration: "none",
-              transition: "background 0.2s",
+              transition: "all 0.2s",
               display: "inline-block",
               whiteSpace: "nowrap",
             }}
             onMouseOver={e => { e.currentTarget.style.background = "#C9A96E"; e.currentTarget.style.color = "#0B1628"; }}
-            onMouseOut={e => { e.currentTarget.style.background = "#0B1628"; e.currentTarget.style.color = "#C9A96E"; }}
+            onMouseOut={e => { e.currentTarget.style.background = scrolled ? "#0B1628" : "rgba(201,169,110,0.12)"; e.currentTarget.style.color = "#C9A96E"; }}
           >
             GET IN TOUCH
           </a>
@@ -97,24 +120,9 @@ export default function Nav() {
           }}
           aria-label="Toggle menu"
         >
-          <span style={{
-            display: "block", width: 22, height: 1.5,
-            background: "#0B1628",
-            transition: "all 0.2s",
-            transform: open ? "rotate(45deg) translate(5px, 5px)" : "none",
-          }} />
-          <span style={{
-            display: "block", width: 22, height: 1.5,
-            background: "#0B1628",
-            transition: "all 0.2s",
-            opacity: open ? 0 : 1,
-          }} />
-          <span style={{
-            display: "block", width: 22, height: 1.5,
-            background: "#0B1628",
-            transition: "all 0.2s",
-            transform: open ? "rotate(-45deg) translate(5px, -5px)" : "none",
-          }} />
+          <span style={{ display: "block", width: 22, height: 1.5, background: hamColor, transition: "all 0.25s", transform: open ? "rotate(45deg) translate(5px, 5px)" : "none" }} />
+          <span style={{ display: "block", width: 22, height: 1.5, background: hamColor, transition: "all 0.25s", opacity: open ? 0 : 1 }} />
+          <span style={{ display: "block", width: 22, height: 1.5, background: hamColor, transition: "all 0.25s", transform: open ? "rotate(-45deg) translate(5px, -5px)" : "none" }} />
         </button>
       </div>
 
@@ -133,13 +141,7 @@ export default function Nav() {
               key={l.label}
               href={l.href}
               onClick={() => setOpen(false)}
-              style={{
-                fontSize: 12,
-                letterSpacing: "0.14em",
-                color: "#0D1117",
-                textDecoration: "none",
-                fontWeight: 500,
-              }}
+              style={{ fontSize: 12, letterSpacing: "0.14em", color: "#0D1117", textDecoration: "none", fontWeight: 500 }}
             >
               {l.label.toUpperCase()}
             </a>
