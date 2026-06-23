@@ -1,8 +1,16 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Nav() {
+  const [pastHero, setPastHero] = useState(false);
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setPastHero(window.scrollY > window.innerHeight * 0.85);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const links = [
     { label: "About", href: "#about" },
@@ -15,12 +23,14 @@ export default function Nav() {
   return (
     <nav style={{
       position: "fixed",
-      top: "37px",
+      top: pastHero ? 0 : "37px",
       left: 0,
       right: 0,
       zIndex: 1000,
-      background: "transparent",
-      borderBottom: "none",
+      background: pastHero ? "#0A0A0A" : "transparent",
+      borderBottom: pastHero ? "1px solid rgba(255,255,255,0.08)" : "none",
+      transform: pastHero ? "translateY(0)" : "translateY(0)",
+      transition: "background 0.35s ease, top 0.35s ease, border-color 0.35s ease",
     }}>
       <div style={{
         maxWidth: 1280,
@@ -31,7 +41,6 @@ export default function Nav() {
         alignItems: "center",
         justifyContent: "space-between",
       }}>
-        {/* Logo */}
         <a href="/" style={{ textDecoration: "none" }}>
           <div style={{
             fontFamily: "var(--font-display), Georgia, serif",
@@ -95,14 +104,7 @@ export default function Nav() {
         <button
           className="nav-mobile-btn"
           onClick={() => setOpen(!open)}
-          style={{
-            background: "none",
-            border: "none",
-            cursor: "pointer",
-            padding: 8,
-            flexDirection: "column",
-            gap: 5,
-          }}
+          style={{ background: "none", border: "none", cursor: "pointer", padding: 8, flexDirection: "column", gap: 5 }}
           aria-label="Toggle menu"
         >
           <span style={{ display: "block", width: 22, height: 1.5, background: "#FFFFFF", transition: "all 0.25s", transform: open ? "rotate(45deg) translate(5px, 5px)" : "none" }} />
@@ -122,31 +124,13 @@ export default function Nav() {
           gap: 18,
         }}>
           {links.map(l => (
-            <a
-              key={l.label}
-              href={l.href}
-              onClick={() => setOpen(false)}
-              style={{ fontSize: 12, letterSpacing: "0.14em", color: "rgba(255,255,255,0.8)", textDecoration: "none", fontWeight: 500 }}
-            >
+            <a key={l.label} href={l.href} onClick={() => setOpen(false)}
+              style={{ fontSize: 12, letterSpacing: "0.14em", color: "rgba(255,255,255,0.8)", textDecoration: "none", fontWeight: 500 }}>
               {l.label.toUpperCase()}
             </a>
           ))}
-          <a
-            href="#contact"
-            onClick={() => setOpen(false)}
-            style={{
-              background: "#FFFFFF",
-              color: "#0A0A0A",
-              padding: "12px 24px",
-              fontSize: 11,
-              letterSpacing: "0.14em",
-              fontWeight: 600,
-              textDecoration: "none",
-              display: "inline-block",
-              alignSelf: "flex-start",
-              marginTop: 4,
-            }}
-          >
+          <a href="#contact" onClick={() => setOpen(false)}
+            style={{ background: "#FFFFFF", color: "#0A0A0A", padding: "12px 24px", fontSize: 11, letterSpacing: "0.14em", fontWeight: 600, textDecoration: "none", display: "inline-block", alignSelf: "flex-start", marginTop: 4 }}>
             GET IN TOUCH
           </a>
         </div>
