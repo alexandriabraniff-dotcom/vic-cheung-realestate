@@ -81,7 +81,7 @@ export default function Hero() {
           marginBottom: 32,
           letterSpacing: "-0.01em",
         }}>
-          Vic <em style={{ fontStyle: "italic", color: "#FFFFFF" }}>Cheung</em>
+          Vic Cheung
         </div>
 
         <p style={{
