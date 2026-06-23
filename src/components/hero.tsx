@@ -35,7 +35,7 @@ export default function Hero() {
         }} />
 
         {/* Team badge */}
-        <div style={{
+        <div className="hero-team-badge" style={{
           position: "absolute",
           bottom: 40,
           right: 0,
@@ -96,7 +96,7 @@ export default function Hero() {
         </p>
 
         {/* CTAs */}
-        <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+        <div className="hero-cta-row" style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
           <a href="/#contact"
             style={{ background: "#FFFFFF", color: "#0A0A0A", padding: "14px 28px", fontSize: 11, letterSpacing: "0.14em", fontWeight: 700, textDecoration: "none", display: "inline-block", whiteSpace: "nowrap", transition: "all 0.2s" }}
             onMouseOver={e => { e.currentTarget.style.background = "rgba(255,255,255,0.85)"; }}
@@ -126,7 +126,7 @@ export default function Hero() {
             fontFamily: "system-ui, sans-serif",
             marginBottom: 16,
           }}>
-            POPULAR LISTINGS
+            RECENT LISTINGS
           </div>
           <div style={{
             display: "flex",
@@ -143,7 +143,7 @@ export default function Hero() {
                 key={i}
                 href="/listings"
                 style={{
-                  flex: "0 0 200px",
+                  flex: "0 0 240px",
                   scrollSnapAlign: "start",
                   display: "flex",
                   flexDirection: "column",
@@ -164,7 +164,7 @@ export default function Hero() {
                     referrerPolicy="no-referrer"
                     style={{
                       width: "100%",
-                      height: 130,
+                      height: 155,
                       objectFit: "cover",
                       display: "block",
                       filter: "brightness(0.75)",

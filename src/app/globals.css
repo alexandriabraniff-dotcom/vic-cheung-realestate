@@ -139,11 +139,10 @@ section[id] {
 
 @media (max-width: 900px) {
 
-  /* ── Hero: half-height overlay on mobile ── */
+  /* ── Hero: overlay on mobile ── */
   .hero-grid {
     display: block !important;
     position: relative !important;
-    min-height: 55vh !important;
     overflow: hidden !important;
   }
 
@@ -163,13 +162,29 @@ section[id] {
     object-fit: cover !important;
   }
 
+  /* Hide portrait decorations that overlap content */
+  .hero-team-badge {
+    display: none !important;
+  }
+
   .hero-content-panel {
     position: relative !important;
     z-index: 2 !important;
     background: transparent !important;
-    min-height: 55vh !important;
-    padding: 100px 24px 40px !important;
+    padding: 110px 28px 56px !important;
     justify-content: flex-start !important;
+    min-height: unset !important;
+  }
+
+  /* Stack CTA buttons vertically on mobile */
+  .hero-cta-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .hero-cta-row a {
+    width: 100% !important;
+    text-align: center !important;
   }
 
   /* ── Grids → single column ── */
