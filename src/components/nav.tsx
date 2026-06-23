@@ -50,7 +50,7 @@ export default function Nav() {
         </a>
 
         {/* Links — centered in right half */}
-        <div className="nav-desktop-links" style={{ position: "absolute", left: "75%", transform: "translateX(-50%)", display: "flex", alignItems: "center", gap: 32 }}>
+        <div className="nav-desktop-links" style={{ position: "absolute", left: "calc(50% + clamp(28px, 5vw, 56px))", display: "flex", alignItems: "center", gap: 32 }}>
           {links.map(l => (
             <a
               key={l.label}

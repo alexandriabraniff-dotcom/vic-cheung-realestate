@@ -72,17 +72,6 @@ export default function Hero() {
         }} />
 
         <div style={{
-          fontSize: 10,
-          letterSpacing: "0.25em",
-          color: "#FFFFFF",
-          fontWeight: 600,
-          marginBottom: 32,
-          fontFamily: "system-ui, sans-serif",
-        }}>
-          VANCOUVER REALTOR®
-        </div>
-
-        <div style={{
           fontFamily: "var(--font-display), Georgia, serif",
           fontSize: "clamp(48px, 5.5vw, 80px)",
           fontWeight: 300,
