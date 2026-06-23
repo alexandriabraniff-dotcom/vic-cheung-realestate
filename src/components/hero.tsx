@@ -143,56 +143,77 @@ export default function Hero() {
                 key={i}
                 href="/listings"
                 style={{
-                  flex: "0 0 240px",
+                  flex: "0 0 200px",
                   scrollSnapAlign: "start",
                   display: "flex",
-                  gap: 14,
-                  alignItems: "center",
+                  flexDirection: "column",
                   textDecoration: "none",
                   background: "rgba(255,255,255,0.04)",
                   border: "1px solid rgba(255,255,255,0.1)",
-                  padding: "18px 16px",
+                  overflow: "hidden",
                   transition: "border-color 0.2s",
                 }}
                 onMouseOver={e => (e.currentTarget.style.borderColor = "rgba(255,255,255,0.4)")}
                 onMouseOut={e => (e.currentTarget.style.borderColor = "rgba(255,255,255,0.1)")}
               >
-                <img
-                  src={listing.image}
-                  alt={listing.label}
-                  referrerPolicy="no-referrer"
-                  style={{
-                    width: 90,
-                    height: 90,
-                    objectFit: "cover",
-                    flexShrink: 0,
-                    filter: "brightness(0.8)",
-                  }}
-                />
-                <div style={{ minWidth: 0 }}>
+                {/* Image with overlaid price */}
+                <div style={{ position: "relative", overflow: "hidden" }}>
+                  <img
+                    src={listing.image}
+                    alt={listing.label}
+                    referrerPolicy="no-referrer"
+                    style={{
+                      width: "100%",
+                      height: 130,
+                      objectFit: "cover",
+                      display: "block",
+                      filter: "brightness(0.75)",
+                    }}
+                  />
                   <div style={{
-                    fontFamily: "var(--font-display), Georgia, serif",
-                    fontSize: 14,
-                    fontWeight: 400,
-                    color: "#F8F8F8",
-                    lineHeight: 1.1,
-                    whiteSpace: "nowrap",
-                    overflow: "hidden",
-                    textOverflow: "ellipsis",
-                  }}>
-                    {listing.price}
+                    position: "absolute",
+                    inset: 0,
+                    background: "linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 55%)",
+                  }} />
+                  <div style={{ position: "absolute", bottom: 10, left: 12 }}>
+                    <div style={{ fontSize: 8, letterSpacing: "0.14em", color: "rgba(255,255,255,0.75)", fontFamily: "system-ui, sans-serif", marginBottom: 3 }}>
+                      {listing.label}
+                    </div>
+                    <div style={{
+                      fontFamily: "var(--font-display), Georgia, serif",
+                      fontSize: 15,
+                      fontWeight: 400,
+                      color: "#F8F8F8",
+                      lineHeight: 1,
+                    }}>
+                      {listing.price}
+                    </div>
                   </div>
+                </div>
+                {/* Details */}
+                <div style={{ padding: "12px 12px 14px" }}>
                   <div style={{
-                    fontSize: 9,
-                    letterSpacing: "0.1em",
-                    color: "rgba(250,250,248,0.4)",
-                    marginTop: 3,
+                    fontSize: 10,
+                    color: "rgba(250,250,248,0.55)",
                     fontFamily: "system-ui, sans-serif",
+                    marginBottom: 8,
                     whiteSpace: "nowrap",
                     overflow: "hidden",
                     textOverflow: "ellipsis",
                   }}>
-                    {listing.neighbourhood.toUpperCase()}
+                    {listing.address}
+                  </div>
+                  <div style={{ display: "flex", gap: 12, borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: 8 }}>
+                    {[
+                      { val: listing.beds, label: "BD" },
+                      { val: listing.baths, label: "BA" },
+                      { val: listing.sqft, label: "SF" },
+                    ].map(d => (
+                      <div key={d.label}>
+                        <div style={{ fontSize: 12, color: "#F8F8F8", fontFamily: "var(--font-display), Georgia, serif" }}>{d.val}</div>
+                        <div style={{ fontSize: 8, letterSpacing: "0.1em", color: "rgba(250,250,248,0.3)", fontFamily: "system-ui, sans-serif" }}>{d.label}</div>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </a>
