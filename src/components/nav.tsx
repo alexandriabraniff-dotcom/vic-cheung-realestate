@@ -20,11 +20,11 @@ export default function Nav() {
     { label: "Contact", href: "#contact" },
   ];
 
-  const bg = scrolled ? "rgba(250,250,248,0.97)" : "transparent";
-  const border = scrolled ? "1px solid #E0DDD8" : "1px solid rgba(255,255,255,0.08)";
-  const logoColor = scrolled ? "#0B1628" : "#FAFAF8";
-  const linkColor = scrolled ? "#0D1117" : "rgba(250,250,248,0.88)";
-  const hamColor = scrolled ? "#0B1628" : "#FAFAF8";
+  const bg = "transparent";
+  const border = "none";
+  const logoColor = "#FAFAF8";
+  const linkColor = "rgba(250,250,248,0.88)";
+  const hamColor = "#FAFAF8";
 
   return (
     <nav style={{
@@ -34,9 +34,8 @@ export default function Nav() {
       right: 0,
       zIndex: 1000,
       background: bg,
-      backdropFilter: scrolled ? "blur(10px)" : "none",
+      backdropFilter: "none",
       borderBottom: border,
-      transition: "background 0.3s, border-color 0.3s",
     }}>
       <div style={{
         maxWidth: 1280,
@@ -87,7 +86,7 @@ export default function Nav() {
           <a
             href="#contact"
             style={{
-              background: scrolled ? "#0B1628" : "rgba(201,169,110,0.12)",
+              background: "rgba(201,169,110,0.12)",
               color: "#C9A96E",
               border: "1px solid rgba(201,169,110,0.45)",
               padding: "10px 22px",
@@ -100,7 +99,7 @@ export default function Nav() {
               whiteSpace: "nowrap",
             }}
             onMouseOver={e => { e.currentTarget.style.background = "#C9A96E"; e.currentTarget.style.color = "#0B1628"; }}
-            onMouseOut={e => { e.currentTarget.style.background = scrolled ? "#0B1628" : "rgba(201,169,110,0.12)"; e.currentTarget.style.color = "#C9A96E"; }}
+            onMouseOut={e => { e.currentTarget.style.background = "rgba(201,169,110,0.12)"; e.currentTarget.style.color = "#C9A96E"; }}
           >
             GET IN TOUCH
           </a>

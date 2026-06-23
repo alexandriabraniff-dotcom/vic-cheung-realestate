@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { allListings } from "@/lib/listings-data";
 
 export default function Hero() {
   const [imgError, setImgError] = useState(false);
@@ -208,37 +209,90 @@ export default function Hero() {
           </a>
         </div>
 
-        {/* Stats */}
+        {/* Mini listings scroll */}
         <div style={{
-          display: "flex",
-          gap: 40,
-          marginTop: 60,
-          paddingTop: 36,
+          marginTop: 52,
+          paddingTop: 32,
           borderTop: "1px solid rgba(201,169,110,0.12)",
-          flexWrap: "wrap",
         }}>
-          {[
-            { num: "17+", label: "Years Experience" },
-            { num: "PMP", label: "Certified" },
-            { num: "$5M", label: "Coverage" },
-          ].map(stat => (
-            <div key={stat.num}>
-              <div style={{
-                fontFamily: "var(--font-display), Georgia, serif",
-                fontSize: 28,
-                fontWeight: 400,
-                color: "#C9A96E",
-                lineHeight: 1,
-              }}>{stat.num}</div>
-              <div style={{
-                fontSize: 9,
-                letterSpacing: "0.16em",
-                color: "rgba(250,250,248,0.35)",
-                marginTop: 6,
-                fontFamily: "system-ui, sans-serif",
-              }}>{stat.label.toUpperCase()}</div>
-            </div>
-          ))}
+          <div style={{
+            fontSize: 9,
+            letterSpacing: "0.2em",
+            color: "rgba(201,169,110,0.6)",
+            fontFamily: "system-ui, sans-serif",
+            marginBottom: 16,
+          }}>
+            POPULAR LISTINGS
+          </div>
+          <div style={{
+            display: "flex",
+            gap: 12,
+            overflowX: "auto",
+            paddingBottom: 8,
+            scrollSnapType: "x mandatory",
+            WebkitOverflowScrolling: "touch",
+            scrollbarWidth: "none",
+            msOverflowStyle: "none",
+          }}>
+            {allListings.filter(l => l.status === "Active").map((listing, i) => (
+              <a
+                key={i}
+                href="/listings"
+                style={{
+                  flex: "0 0 180px",
+                  scrollSnapAlign: "start",
+                  display: "flex",
+                  gap: 10,
+                  alignItems: "center",
+                  textDecoration: "none",
+                  background: "rgba(255,255,255,0.04)",
+                  border: "1px solid rgba(201,169,110,0.1)",
+                  padding: "8px 10px",
+                  transition: "border-color 0.2s",
+                }}
+                onMouseOver={e => (e.currentTarget.style.borderColor = "rgba(201,169,110,0.4)")}
+                onMouseOut={e => (e.currentTarget.style.borderColor = "rgba(201,169,110,0.1)")}
+              >
+                <img
+                  src={listing.image}
+                  alt={listing.label}
+                  style={{
+                    width: 44,
+                    height: 44,
+                    objectFit: "cover",
+                    flexShrink: 0,
+                    filter: "brightness(0.8)",
+                  }}
+                />
+                <div style={{ minWidth: 0 }}>
+                  <div style={{
+                    fontFamily: "var(--font-display), Georgia, serif",
+                    fontSize: 14,
+                    fontWeight: 400,
+                    color: "#FAFAF8",
+                    lineHeight: 1.1,
+                    whiteSpace: "nowrap",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                  }}>
+                    {listing.price}
+                  </div>
+                  <div style={{
+                    fontSize: 9,
+                    letterSpacing: "0.1em",
+                    color: "rgba(250,250,248,0.4)",
+                    marginTop: 3,
+                    fontFamily: "system-ui, sans-serif",
+                    whiteSpace: "nowrap",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                  }}>
+                    {listing.neighbourhood.toUpperCase()}
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </section>
