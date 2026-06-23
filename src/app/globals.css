@@ -139,41 +139,44 @@ section[id] {
 
 @media (max-width: 900px) {
 
-  /* ── Hero: overlay on mobile ── */
+  /* ── Hero: content top, image bottom on mobile ── */
   .hero-grid {
-    display: block !important;
-    position: relative !important;
-    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    position: static !important;
+    overflow: visible !important;
   }
 
   .hero-portrait {
-    position: absolute !important;
-    inset: 0 !important;
+    position: static !important;
+    inset: auto !important;
     width: 100% !important;
-    height: 100% !important;
+    height: clamp(260px, 65vw, 400px) !important;
     min-height: unset !important;
     max-height: none !important;
+    order: 2 !important;
   }
 
   .hero-portrait img {
-    filter: brightness(0.35) !important;
+    filter: brightness(0.65) !important;
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
   }
 
-  /* Hide portrait decorations that overlap content */
+  /* Hide portrait decorations */
   .hero-team-badge {
     display: none !important;
   }
 
   .hero-content-panel {
-    position: relative !important;
-    z-index: 2 !important;
-    background: transparent !important;
-    padding: 110px 28px 56px !important;
+    position: static !important;
+    z-index: auto !important;
+    background: #0A0A0A !important;
+    padding: 72px 28px 48px !important;
     justify-content: flex-start !important;
     min-height: unset !important;
+    order: 1 !important;
   }
 
   /* Stack CTA buttons vertically on mobile */
