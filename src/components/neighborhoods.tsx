@@ -85,7 +85,7 @@ export default function Neighborhoods() {
       {/* Right: architecture photo */}
       <div style={{ position: "relative", overflow: "hidden", minHeight: 400 }}>
         <img
-          src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1000&q=80"
+          src="/vancouver-skyline.jpg"
           alt="Vancouver city skyline"
           referrerPolicy="no-referrer"
           style={{
