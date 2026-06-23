@@ -176,16 +176,6 @@ export default function FeaturedListings() {
           </div>
         </div>
 
-        <div style={{
-          marginTop: 24,
-          fontSize: 11,
-          color: "#ABABAB",
-          fontFamily: "system-ui, sans-serif",
-          letterSpacing: "0.04em",
-          textAlign: "center",
-        }}>
-          Placeholder listings shown for demonstration. Contact Vic for current inventory.
-        </div>
       </div>
     </section>
   );
