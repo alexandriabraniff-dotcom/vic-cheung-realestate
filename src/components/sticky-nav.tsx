@@ -1,8 +1,17 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-export default function Nav() {
+export default function StickyNav({ alwaysVisible = false }: { alwaysVisible?: boolean }) {
+  const [visible, setVisible] = useState(alwaysVisible);
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    if (alwaysVisible) return;
+    const onScroll = () => setVisible(window.scrollY > window.innerHeight * 0.85);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [alwaysVisible]);
 
   const links = [
     { label: "About", href: "/#about" },
@@ -13,53 +22,42 @@ export default function Nav() {
 
   return (
     <nav style={{
-      position: "absolute",
+      position: "fixed",
       top: 0,
       left: 0,
       right: 0,
-      zIndex: 1000,
-      background: "transparent",
+      zIndex: 2000,
+      background: "#0A0A0A",
+      borderBottom: "1px solid rgba(255,255,255,0.08)",
+      transform: visible ? "translateY(0)" : "translateY(-110%)",
+      transition: "transform 0.45s cubic-bezier(0.16, 1, 0.3, 1)",
     }}>
-      {/* DESIGNER CREDIT BANNER — remove after client payment */}
-      <div style={{
-        width: "100%",
-        background: "#0A0A0A",
-        color: "#FFFFFF",
-        textAlign: "center",
-        padding: "8px 16px",
-        fontSize: "11px",
-        letterSpacing: "0.08em",
-        fontFamily: "system-ui, sans-serif",
-      }}>
-        Website designed by Alexandria Braniff — hello@alexandriabraniff.com
-      </div>
       <div style={{
         maxWidth: 1280,
         margin: "0 auto",
         padding: "0 32px",
-        height: 68,
+        height: 64,
         display: "flex",
         alignItems: "center",
-        position: "relative",
       }}>
-        {/* Logo — far left */}
+        {/* Logo */}
         <a href="/" style={{ textDecoration: "none", flexShrink: 0 }}>
           <div style={{
             fontFamily: "var(--font-display), Georgia, serif",
-            fontSize: 19,
+            fontSize: 17,
             fontWeight: 500,
             color: "#FFFFFF",
             letterSpacing: "0.05em",
           }}>
             VIC CHEUNG
           </div>
-          <div style={{ fontSize: 9, color: "rgba(255,255,255,0.45)", letterSpacing: "0.2em", fontWeight: 500, marginTop: 1 }}>
+          <div style={{ fontSize: 8, color: "rgba(255,255,255,0.4)", letterSpacing: "0.2em", fontWeight: 500, marginTop: 1 }}>
             REALTOR® | VANCOUVER
           </div>
         </a>
 
-        {/* Links — centered in right half */}
-        <div className="nav-desktop-links" style={{ position: "absolute", left: "75%", transform: "translateX(-50%)", display: "flex", alignItems: "center", gap: 32 }}>
+        {/* Links + button — right side */}
+        <div className="nav-desktop-links" style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: 32 }}>
           {links.map(l => (
             <a
               key={l.label}
@@ -67,22 +65,40 @@ export default function Nav() {
               style={{
                 fontSize: 11,
                 letterSpacing: "0.14em",
-                color: "rgba(255,255,255,0.8)",
+                color: "rgba(255,255,255,0.75)",
                 textDecoration: "none",
                 fontWeight: 500,
-                transition: "color 0.2s, border-color 0.2s",
                 borderBottom: "1px solid transparent",
                 paddingBottom: 2,
+                transition: "color 0.2s, border-color 0.2s",
                 whiteSpace: "nowrap",
               }}
               onMouseOver={e => { e.currentTarget.style.color = "#FFFFFF"; e.currentTarget.style.borderBottomColor = "#FFFFFF"; }}
-              onMouseOut={e => { e.currentTarget.style.color = "rgba(255,255,255,0.8)"; e.currentTarget.style.borderBottomColor = "transparent"; }}
+              onMouseOut={e => { e.currentTarget.style.color = "rgba(255,255,255,0.75)"; e.currentTarget.style.borderBottomColor = "transparent"; }}
             >
               {l.label.toUpperCase()}
             </a>
           ))}
+          <a
+            href="/#contact"
+            style={{
+              background: "#FFFFFF",
+              color: "#0A0A0A",
+              padding: "9px 22px",
+              fontSize: 11,
+              letterSpacing: "0.14em",
+              fontWeight: 700,
+              textDecoration: "none",
+              display: "inline-block",
+              whiteSpace: "nowrap",
+              transition: "all 0.2s",
+            }}
+            onMouseOver={e => { e.currentTarget.style.background = "rgba(255,255,255,0.85)"; }}
+            onMouseOut={e => { e.currentTarget.style.background = "#FFFFFF"; }}
+          >
+            GET IN TOUCH
+          </a>
         </div>
-
 
         {/* Mobile hamburger */}
         <button

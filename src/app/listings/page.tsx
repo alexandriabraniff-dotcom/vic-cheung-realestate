@@ -1,4 +1,4 @@
-import Nav from "@/components/nav";
+import StickyNav from "@/components/sticky-nav";
 import Footer from "@/components/footer";
 import { allListings, extraListings } from "@/lib/listings-data";
 import type { Listing } from "@/lib/listings-data";
@@ -16,54 +16,53 @@ export default function ListingsPage() {
 
   return (
     <main>
-      {/* Designer credit banner */}
-      <div style={{
-        width: "100%",
-        background: "#0A0A0A",
-        color: "#FFFFFF",
-        textAlign: "center",
-        padding: "10px 16px",
-        fontSize: "12px",
-        letterSpacing: "0.08em",
-        fontFamily: "system-ui, sans-serif",
-        position: "sticky",
-        top: 0,
-        zIndex: 9999,
-      }}>
-        Website designed by Alexandria Braniff — AlexandriaBraniff@gmail.com
-      </div>
-      <Nav />
+      <StickyNav alwaysVisible />
 
       {/* Page header */}
-      <div style={{
-        background: "#0A0A0A",
-        paddingTop: "clamp(100px, 14vw, 160px)",
-        paddingBottom: "clamp(60px, 8vw, 100px)",
-        paddingLeft: "10vw",
-        paddingRight: "10vw",
-      }}>
-        <div style={{ fontSize: 10, letterSpacing: "0.22em", color: "#FFFFFF", fontWeight: 600, marginBottom: 20, fontFamily: "system-ui, sans-serif" }}>
-          VIC CHEUNG — REALTOR®
-        </div>
-        <h1 style={{
-          fontFamily: "var(--font-display), Georgia, serif",
-          fontSize: "clamp(36px, 5vw, 72px)",
-          fontWeight: 300,
-          color: "#F8F8F8",
-          lineHeight: 1.1,
-          margin: "0 0 20px 0",
+      <div className="listings-header-grid" style={{ background: "#0A0A0A" }}>
+        {/* Left: text */}
+        <div style={{
+          paddingTop: "clamp(100px, 14vw, 160px)",
+          paddingBottom: "clamp(60px, 8vw, 100px)",
+          paddingLeft: "10vw",
+          paddingRight: "clamp(32px, 6vw, 80px)",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
         }}>
-          Current &amp; Past<br /><em style={{ color: "#FFFFFF", fontStyle: "italic" }}>Listings.</em>
-        </h1>
-        <p style={{ fontSize: 15, color: "rgba(250,250,248,0.5)", fontFamily: "system-ui, sans-serif", lineHeight: 1.7, maxWidth: 480, margin: 0 }}>
-          Properties evaluated with a builder&apos;s eye and a designer&apos;s sensibility. Contact Vic for current availability and pricing.
-        </p>
+          <div style={{ fontSize: 10, letterSpacing: "0.22em", color: "#FFFFFF", fontWeight: 600, marginBottom: 20, fontFamily: "system-ui, sans-serif" }}>
+            VIC CHEUNG — REALTOR®
+          </div>
+          <h1 style={{
+            fontFamily: "var(--font-display), Georgia, serif",
+            fontSize: "clamp(36px, 5vw, 72px)",
+            fontWeight: 300,
+            color: "#F8F8F8",
+            lineHeight: 1.1,
+            margin: "0 0 20px 0",
+          }}>
+            Current &amp; Past<br /><em style={{ color: "#FFFFFF", fontStyle: "italic" }}>Listings.</em>
+          </h1>
+          <p style={{ fontSize: 15, color: "rgba(250,250,248,0.5)", fontFamily: "system-ui, sans-serif", lineHeight: 1.7, maxWidth: 480, margin: 0 }}>
+            Properties evaluated with a builder&apos;s eye and a designer&apos;s sensibility. Contact Vic for current availability and pricing.
+          </p>
+        </div>
+        {/* Right: image */}
+        <div style={{ position: "relative", overflow: "hidden" }}>
+          <img
+            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80"
+            alt="Vancouver luxury property"
+            referrerPolicy="no-referrer"
+            style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", filter: "brightness(0.7)" }}
+          />
+          <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(10,10,10,0.6) 0%, transparent 50%)" }} />
+        </div>
       </div>
 
       {/* Active listings */}
       <div style={{ background: "#F8F8F8", padding: "clamp(60px, 8vw, 100px) 10vw" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <div style={{ fontSize: 10, letterSpacing: "0.22em", color: "#FFFFFF", fontWeight: 600, marginBottom: 48, fontFamily: "system-ui, sans-serif" }}>
+          <div style={{ fontSize: 10, letterSpacing: "0.22em", color: "#0A0A0A", fontWeight: 600, marginBottom: 48, fontFamily: "system-ui, sans-serif" }}>
             ACTIVE LISTINGS ({active.length})
           </div>
           <div className="three-col-grid" style={{ gap: 24 }}>
@@ -77,7 +76,7 @@ export default function ListingsPage() {
       {/* Sold listings */}
       <div style={{ background: "#F0F0F0", padding: "clamp(60px, 8vw, 100px) 10vw" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <div style={{ fontSize: 10, letterSpacing: "0.22em", color: "#FFFFFF", fontWeight: 600, marginBottom: 48, fontFamily: "system-ui, sans-serif" }}>
+          <div style={{ fontSize: 10, letterSpacing: "0.22em", color: "#0A0A0A", fontWeight: 600, marginBottom: 48, fontFamily: "system-ui, sans-serif" }}>
             SOLD ({sold.length})
           </div>
           <div className="three-col-grid" style={{ gap: 24 }}>
@@ -89,36 +88,43 @@ export default function ListingsPage() {
       </div>
 
       {/* CTA */}
-      <div style={{
-        background: "#0A0A0A",
-        padding: "clamp(60px, 8vw, 100px) 10vw",
-        textAlign: "center",
-      }}>
-        <div style={{ fontSize: 10, letterSpacing: "0.22em", color: "#FFFFFF", fontWeight: 600, marginBottom: 20, fontFamily: "system-ui, sans-serif" }}>
-          WORK WITH VIC
+      <div style={{ background: "#0A0A0A", padding: "clamp(60px, 8vw, 100px) 10vw" }}>
+        <div className="two-col-grid" style={{ maxWidth: 1200, margin: "0 auto", gap: "clamp(32px, 6vw, 80px)", alignItems: "flex-end" }}>
+          {/* Left: heading */}
+          <div>
+            <div style={{ fontSize: 10, letterSpacing: "0.22em", color: "#FFFFFF", fontWeight: 600, marginBottom: 20, fontFamily: "system-ui, sans-serif" }}>
+              WORK WITH VIC
+            </div>
+            <h2 style={{
+              fontFamily: "var(--font-display), Georgia, serif",
+              fontSize: "clamp(28px, 3.5vw, 52px)",
+              fontWeight: 300,
+              color: "#F8F8F8",
+              margin: 0,
+              lineHeight: 1.2,
+            }}>
+              Ready to find your<br />next property?
+            </h2>
+          </div>
+          {/* Right: description + button */}
+          <div>
+            <p style={{ fontSize: 14, color: "rgba(250,250,248,0.45)", fontFamily: "system-ui, sans-serif", lineHeight: 1.75, margin: "0 0 28px 0" }}>
+              Whether you&apos;re buying, investing, or exploring the market, Vic brings the expertise to guide every decision with clarity and confidence.
+            </p>
+            <a href="/#contact" style={{
+              background: "#FFFFFF",
+              color: "#0A0A0A",
+              padding: "16px 40px",
+              fontSize: 11,
+              letterSpacing: "0.16em",
+              fontWeight: 700,
+              textDecoration: "none",
+              display: "inline-block",
+            }}>
+              GET IN TOUCH
+            </a>
+          </div>
         </div>
-        <h2 style={{
-          fontFamily: "var(--font-display), Georgia, serif",
-          fontSize: "clamp(28px, 3.5vw, 52px)",
-          fontWeight: 300,
-          color: "#F8F8F8",
-          margin: "0 0 32px 0",
-          lineHeight: 1.2,
-        }}>
-          Ready to find your next property?
-        </h2>
-        <a href="/#contact" style={{
-          background: "#FFFFFF",
-          color: "#0A0A0A",
-          padding: "16px 40px",
-          fontSize: 11,
-          letterSpacing: "0.16em",
-          fontWeight: 700,
-          textDecoration: "none",
-          display: "inline-block",
-        }}>
-          GET IN TOUCH
-        </a>
       </div>
 
       <Footer />
@@ -133,6 +139,7 @@ function ListingCard({ listing }: { listing: Listing }) {
         <img
           src={listing.image}
           alt={listing.label}
+          referrerPolicy="no-referrer"
           style={{
             width: "100%",
             aspectRatio: "4/3",

@@ -6,12 +6,13 @@ export default function Hero() {
   const [imgError, setImgError] = useState(false);
 
   return (
-    <section id="hero" style={{ minHeight: "100vh", display: "grid", gridTemplateColumns: "50% 50%" }}>
+    <section id="hero" className="hero-grid" style={{ minHeight: "100vh" }}>
       {/* Left: Agent Portrait — replace src with /vic.jpg when available */}
       <div className="hero-portrait" style={{ position: "relative", overflow: "hidden" }}>
         <img
           src="/vic.jpg"
           alt="Vic Cheung"
+          referrerPolicy="no-referrer"
           onError={e => { (e.currentTarget as HTMLImageElement).src = "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=1000&q=85"; }}
           style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
         />
@@ -91,8 +92,7 @@ export default function Hero() {
           marginBottom: 32,
           letterSpacing: "-0.01em",
         }}>
-          Vic<br />
-          <em style={{ fontStyle: "italic", color: "#FFFFFF" }}>Cheung</em>
+          Vic <em style={{ fontStyle: "italic", color: "#FFFFFF" }}>Cheung</em>
         </div>
 
         <p style={{
@@ -106,73 +106,20 @@ export default function Hero() {
           Buy with a builder&apos;s mind. Invest with a designer&apos;s eye. 17 years spanning design, construction, and Vancouver&apos;s most prestigious developments.
         </p>
 
-        {/* Search bar */}
-        <div style={{
-          border: "1px solid rgba(255,255,255,0.2)",
-          display: "flex",
-          alignItems: "center",
-          marginBottom: 28,
-          background: "rgba(255,255,255,0.03)",
-        }}>
-          <input
-            type="text"
-            placeholder="Search neighbourhoods, areas..."
-            style={{
-              flex: 1,
-              background: "transparent",
-              border: "none",
-              outline: "none",
-              padding: "14px 20px",
-              fontSize: 13,
-              color: "#F8F8F8",
-              fontFamily: "system-ui, sans-serif",
-              letterSpacing: "0.04em",
-              minWidth: 0,
-            }}
-          />
-          <button style={{
-            background: "#FFFFFF",
-            border: "none",
-            padding: "14px 20px",
-            cursor: "pointer",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            flexShrink: 0,
-          }}>
-            <svg width="15" height="15" fill="none" stroke="#0A0A0A" strokeWidth="2.2" viewBox="0 0 24 24">
-              <circle cx="11" cy="11" r="8" />
-              <path d="M21 21l-4.35-4.35" />
-            </svg>
-          </button>
-        </div>
-
         {/* CTAs */}
         <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-          <a href="#contact" style={{
-            background: "#FFFFFF",
-            color: "#0A0A0A",
-            padding: "14px 28px",
-            fontSize: 11,
-            letterSpacing: "0.14em",
-            fontWeight: 700,
-            textDecoration: "none",
-            display: "inline-block",
-            whiteSpace: "nowrap",
-          }}>
-            WORK WITH VIC
+          <a href="/#contact"
+            style={{ background: "#FFFFFF", color: "#0A0A0A", padding: "14px 28px", fontSize: 11, letterSpacing: "0.14em", fontWeight: 700, textDecoration: "none", display: "inline-block", whiteSpace: "nowrap", transition: "all 0.2s" }}
+            onMouseOver={e => { e.currentTarget.style.background = "rgba(255,255,255,0.85)"; }}
+            onMouseOut={e => { e.currentTarget.style.background = "#FFFFFF"; }}
+          >
+            GET IN TOUCH
           </a>
-          <a href="#listings" style={{
-            border: "1px solid rgba(255,255,255,0.35)",
-            color: "#FFFFFF",
-            padding: "14px 28px",
-            fontSize: 11,
-            letterSpacing: "0.14em",
-            fontWeight: 600,
-            textDecoration: "none",
-            display: "inline-block",
-            whiteSpace: "nowrap",
-          }}>
+          <a href="/#listings"
+            style={{ border: "1px solid rgba(255,255,255,0.35)", color: "#FFFFFF", padding: "14px 28px", fontSize: 11, letterSpacing: "0.14em", fontWeight: 600, textDecoration: "none", display: "inline-block", whiteSpace: "nowrap", transition: "all 0.2s" }}
+            onMouseOver={e => { e.currentTarget.style.background = "rgba(255,255,255,0.1)"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.7)"; }}
+            onMouseOut={e => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.35)"; }}
+          >
             VIEW LISTINGS
           </a>
         </div>
@@ -207,15 +154,15 @@ export default function Hero() {
                 key={i}
                 href="/listings"
                 style={{
-                  flex: "0 0 180px",
+                  flex: "0 0 240px",
                   scrollSnapAlign: "start",
                   display: "flex",
-                  gap: 10,
+                  gap: 14,
                   alignItems: "center",
                   textDecoration: "none",
                   background: "rgba(255,255,255,0.04)",
                   border: "1px solid rgba(255,255,255,0.1)",
-                  padding: "8px 10px",
+                  padding: "18px 16px",
                   transition: "border-color 0.2s",
                 }}
                 onMouseOver={e => (e.currentTarget.style.borderColor = "rgba(255,255,255,0.4)")}
@@ -224,9 +171,10 @@ export default function Hero() {
                 <img
                   src={listing.image}
                   alt={listing.label}
+                  referrerPolicy="no-referrer"
                   style={{
-                    width: 44,
-                    height: 44,
+                    width: 90,
+                    height: 90,
                     objectFit: "cover",
                     flexShrink: 0,
                     filter: "brightness(0.8)",

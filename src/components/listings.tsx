@@ -55,6 +55,7 @@ export default function FeaturedListings() {
             <img
               src={featured.image}
               alt={featured.label}
+              referrerPolicy="no-referrer"
               style={{
                 width: "100%",
                 height: "100%",
@@ -121,6 +122,7 @@ export default function FeaturedListings() {
                 <img
                   src={listing.image}
                   alt={listing.label}
+                  referrerPolicy="no-referrer"
                   style={{
                     width: "100%",
                     height: "100%",

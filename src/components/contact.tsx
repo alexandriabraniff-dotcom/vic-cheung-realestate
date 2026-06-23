@@ -3,9 +3,9 @@ export default function Contact() {
   return (
     <section id="contact" style={{
       background: "#0A0A0A",
-      padding: "120px 10vw",
+      padding: "clamp(60px, 10vw, 120px) 10vw",
     }}>
-      <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "80px", alignItems: "start" }}>
+      <div className="two-col-grid" style={{ maxWidth: 1200, margin: "0 auto", gap: "clamp(40px, 6vw, 80px)", alignItems: "start" }}>
         {/* Left */}
         <div>
           <div style={{ fontSize: 10, letterSpacing: "0.22em", color: "#FFFFFF", fontWeight: 600, marginBottom: 20, fontFamily: "system-ui, sans-serif" }}>
@@ -84,7 +84,7 @@ export default function Contact() {
         </div>
 
         {/* Right */}
-        <div style={{ paddingTop: 80 }}>
+        <div className="contact-right-pad">
           <div style={{ borderLeft: "1px solid rgba(255,255,255,0.2)", paddingLeft: 40 }}>
             <div style={{ marginBottom: 36 }}>
               <div style={{ fontSize: 10, letterSpacing: "0.18em", color: "#FFFFFF", fontWeight: 600, marginBottom: 10, fontFamily: "system-ui, sans-serif" }}>PHONE</div>
@@ -103,7 +103,7 @@ export default function Contact() {
             </div>
             <div>
               <div style={{ fontSize: 10, letterSpacing: "0.18em", color: "#FFFFFF", fontWeight: 600, marginBottom: 16, fontFamily: "system-ui, sans-serif" }}>FOLLOW</div>
-              <div style={{ display: "flex", gap: 20 }}>
+              <div style={{ display: "flex", gap: 20, flexWrap: "wrap" }}>
                 {["Instagram", "YouTube", "Facebook", "Twitter"].map(soc => (
                   <a key={soc} href="#" style={{
                     fontSize: 11,

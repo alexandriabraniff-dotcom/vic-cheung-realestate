@@ -2,7 +2,7 @@ export default function About() {
   return (
     <section id="about" style={{
       background: "#F8F8F8",
-      padding: "120px 10vw",
+      padding: "clamp(60px, 10vw, 120px) 10vw",
     }}>
       <div className="two-col-grid" style={{
         maxWidth: 1200,
@@ -64,7 +64,7 @@ export default function About() {
             PMP-certified and backed by $5M in liability coverage through My Project Team Management Corp., Vic offers unmatched post-purchase support through every stage of renovation and delivery.
           </p>
 
-          <div style={{ display: "flex", gap: 40 }}>
+          <div style={{ display: "flex", gap: "clamp(16px, 5vw, 40px)", flexWrap: "wrap" }}>
             {[
               { label: "Interior Design", icon: "◇" },
               { label: "Construction", icon: "◆" },
@@ -77,6 +77,43 @@ export default function About() {
             ))}
           </div>
         </div>
+      </div>
+
+      {/* Credentials strip */}
+      <div style={{
+        marginTop: "clamp(48px, 7vw, 80px)",
+        paddingTop: "clamp(32px, 5vw, 52px)",
+        borderTop: "1px solid #E0E0E0",
+        maxWidth: 1200,
+        margin: "clamp(48px, 7vw, 80px) auto 0",
+        display: "grid",
+        gridTemplateColumns: "repeat(3, 1fr)",
+        gap: "clamp(24px, 4vw, 48px)",
+      }} className="three-col-grid">
+        {[
+          { stat: "17+", label: "Years Experience", detail: "Interior design, construction, and development across Vancouver's most prestigious projects." },
+          { stat: "PMP", label: "Certified", detail: "Globally recognised certification held by fewer than 1% of real estate agents." },
+          { stat: "$5M", label: "Liability Coverage", detail: "Full coverage through My Project Team Management Corp. from purchase through to delivery." },
+        ].map((c, i) => (
+          <div key={i} style={{ borderTop: "2px solid #0A0A0A", paddingTop: 24 }}>
+            <div style={{
+              fontFamily: "var(--font-display), Georgia, serif",
+              fontSize: "clamp(36px, 4vw, 56px)",
+              fontWeight: 300,
+              color: "#0A0A0A",
+              lineHeight: 1,
+              marginBottom: 10,
+            }}>
+              {c.stat}
+            </div>
+            <div style={{ fontSize: 10, letterSpacing: "0.16em", color: "#0A0A0A", fontWeight: 600, marginBottom: 10, fontFamily: "system-ui, sans-serif" }}>
+              {c.label.toUpperCase()}
+            </div>
+            <p style={{ fontSize: 13, lineHeight: 1.7, color: "#6A6A6A", margin: 0, fontFamily: "system-ui, sans-serif" }}>
+              {c.detail}
+            </p>
+          </div>
+        ))}
       </div>
     </section>
   );
