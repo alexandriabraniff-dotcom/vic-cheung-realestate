@@ -139,12 +139,11 @@ section[id] {
 
 @media (max-width: 900px) {
 
-  /* ── Hero: full-bleed overlay layout ── */
+  /* ── Hero: half-height overlay on mobile ── */
   .hero-grid {
     display: block !important;
     position: relative !important;
-    min-height: 100svh !important;
-    min-height: 100vh !important;
+    min-height: 55vh !important;
     overflow: hidden !important;
   }
 
@@ -168,9 +167,8 @@ section[id] {
     position: relative !important;
     z-index: 2 !important;
     background: transparent !important;
-    min-height: 100svh !important;
-    min-height: 100vh !important;
-    padding: 110px 24px 48px !important;
+    min-height: 55vh !important;
+    padding: 100px 24px 40px !important;
     justify-content: flex-start !important;
   }
 
