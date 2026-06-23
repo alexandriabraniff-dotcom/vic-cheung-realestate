@@ -11,7 +11,7 @@ export default function About() {
         alignItems: "center",
       }}>
         {/* Image placeholder */}
-        <div style={{
+        <div className="about-photo-col" style={{
           aspectRatio: "4/5",
           background: "#E8E8E8",
           position: "relative",

@@ -53,7 +53,7 @@ export default function Hero() {
       </div>
 
       {/* Right: Content Panel */}
-      <div style={{
+      <div className="hero-content-panel" style={{
         background: "#0A0A0A",
         display: "flex",
         flexDirection: "column",

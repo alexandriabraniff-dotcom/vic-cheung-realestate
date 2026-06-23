@@ -138,28 +138,43 @@ section[id] {
 }
 
 @media (max-width: 900px) {
-  .listings-header-grid {
-    grid-template-columns: 1fr !important;
-  }
 
-  .contact-right-pad {
-    padding-top: 0 !important;
-  }
-
-  .contact-right-pad > div {
-    border-left: none !important;
-    padding-left: 0 !important;
-  }
-
+  /* ── Hero: full-bleed overlay layout ── */
   .hero-grid {
-    grid-template-columns: 1fr !important;
+    display: block !important;
+    position: relative !important;
+    min-height: 100svh !important;
+    min-height: 100vh !important;
+    overflow: hidden !important;
   }
 
   .hero-portrait {
-    min-height: 65vw !important;
-    max-height: 480px;
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: unset !important;
+    max-height: none !important;
   }
 
+  .hero-portrait img {
+    filter: brightness(0.35) !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  .hero-content-panel {
+    position: relative !important;
+    z-index: 2 !important;
+    background: transparent !important;
+    min-height: 100svh !important;
+    min-height: 100vh !important;
+    padding: 110px 24px 48px !important;
+    justify-content: flex-start !important;
+  }
+
+  /* ── Grids → single column ── */
   .two-col-grid {
     grid-template-columns: 1fr !important;
   }
@@ -172,10 +187,26 @@ section[id] {
     grid-template-columns: 1fr !important;
   }
 
-  .listings-stack {
-    flex-direction: row !important;
+  .listings-header-grid {
+    grid-template-columns: 1fr !important;
   }
 
+  /* ── About: hide placeholder photo on mobile ── */
+  .about-photo-col {
+    display: none !important;
+  }
+
+  /* ── Contact ── */
+  .contact-right-pad {
+    padding-top: 0 !important;
+  }
+
+  .contact-right-pad > div {
+    border-left: none !important;
+    padding-left: 0 !important;
+  }
+
+  /* ── Nav ── */
   .nav-mobile-btn {
     display: flex !important;
   }
@@ -184,22 +215,20 @@ section[id] {
     display: none !important;
   }
 
-  .nav-mobile-open .nav-desktop-links {
-    display: flex !important;
-    flex-direction: column !important;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: rgba(250,250,248,0.98);
-    padding: 24px 32px;
-    border-bottom: 1px solid #E0E0E0;
-    gap: 20px;
-    align-items: flex-start;
+  /* ── Listings ── */
+  .listings-stack {
+    flex-direction: row !important;
   }
 
+  /* ── Footer ── */
   .footer-cols {
     gap: 32px !important;
+  }
+
+  /* ── Testimonials: show scroll hint ── */
+  .testimonials-scroll::after {
+    content: '';
+    flex: 0 0 1px;
   }
 }
 
