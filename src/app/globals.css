@@ -52,3 +52,131 @@
     font-family: var(--font-display), Georgia, serif;
   }
 }
+
+/* Anchor link offset — clears sticky banner + fixed nav */
+section[id] {
+  scroll-margin-top: 105px;
+}
+
+/* ── Responsive layout helpers ── */
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.hero-portrait {
+  min-height: 100vh;
+}
+
+.two-col-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.three-col-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.listings-grid {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+}
+
+.listings-stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.footer-cols {
+  display: flex;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.nav-mobile-btn {
+  display: none;
+}
+
+.nav-desktop-links {
+  display: flex;
+  gap: 36px;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .hero-portrait {
+    min-height: 65vw !important;
+    max-height: 480px;
+  }
+
+  .two-col-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .three-col-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .listings-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .listings-stack {
+    flex-direction: row !important;
+  }
+
+  .nav-mobile-btn {
+    display: flex !important;
+  }
+
+  .nav-desktop-links {
+    display: none !important;
+  }
+
+  .nav-mobile-open .nav-desktop-links {
+    display: flex !important;
+    flex-direction: column !important;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(250,250,248,0.98);
+    padding: 24px 32px;
+    border-bottom: 1px solid #E0DDD8;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .footer-cols {
+    gap: 32px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .listings-stack {
+    flex-direction: column !important;
+  }
+
+  .footer-inner {
+    flex-direction: column !important;
+  }
+
+  .footer-cols {
+    flex-direction: column !important;
+    gap: 24px !important;
+  }
+}

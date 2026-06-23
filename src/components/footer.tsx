@@ -7,7 +7,7 @@ export default function Footer() {
       borderTop: "1px solid rgba(201,169,110,0.15)",
     }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 48, flexWrap: "wrap", gap: 32 }}>
+        <div className="footer-inner" style={{ marginBottom: 48 }}>
           <div>
             <div style={{ fontFamily: "var(--font-display), Georgia, serif", fontSize: 22, fontWeight: 500, color: "#FAFAF8", letterSpacing: "0.05em" }}>
               VIC CHEUNG
@@ -20,7 +20,7 @@ export default function Footer() {
             </p>
           </div>
 
-          <div style={{ display: "flex", gap: 60 }}>
+          <div className="footer-cols">
             {[
               { heading: "Navigate", links: ["About", "Services", "Testimonials", "Contact"] },
               { heading: "Services", links: ["Buyer Representation", "Investment Advisory", "Project Management"] },

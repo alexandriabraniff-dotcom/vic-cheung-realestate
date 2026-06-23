@@ -40,7 +40,7 @@ export default function Credentials() {
           Built on expertise.<br />Backed by results.
         </h2>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 32 }}>
+        <div className="three-col-grid" style={{ gap: 32 }}>
           {credentials.map((c, i) => (
             <div key={i} style={{
               background: "#FFFFFF",

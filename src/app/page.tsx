@@ -1,7 +1,9 @@
 import Nav from "@/components/nav";
 import Hero from "@/components/hero";
 import About from "@/components/about";
+import FeaturedListings from "@/components/listings";
 import Services from "@/components/services";
+import Neighborhoods from "@/components/neighborhoods";
 import Credentials from "@/components/credentials";
 import Testimonials from "@/components/testimonials";
 import Contact from "@/components/contact";
@@ -20,7 +22,8 @@ export default function Home() {
         fontSize: "12px",
         letterSpacing: "0.08em",
         fontFamily: "system-ui, sans-serif",
-        position: "relative",
+        position: "sticky",
+        top: 0,
         zIndex: 9999,
       }}>
         Website designed by Alexandria Braniff — AlexandriaBraniff@gmail.com
@@ -28,7 +31,9 @@ export default function Home() {
       <Nav />
       <Hero />
       <About />
+      <FeaturedListings />
       <Services />
+      <Neighborhoods />
       <Credentials />
       <Testimonials />
       <Contact />

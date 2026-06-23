@@ -40,7 +40,7 @@ export default function Services() {
           What Vic brings<br />to the table.
         </h2>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 1, background: "rgba(201,169,110,0.15)" }}>
+        <div className="three-col-grid" style={{ gap: 1, background: "rgba(201,169,110,0.15)" }}>
           {services.map((s, i) => (
             <div key={i} style={{
               background: "#0B1628",

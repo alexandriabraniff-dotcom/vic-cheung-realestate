@@ -4,12 +4,10 @@ export default function About() {
       background: "#FAFAF8",
       padding: "120px 10vw",
     }}>
-      <div style={{
+      <div className="two-col-grid" style={{
         maxWidth: 1200,
         margin: "0 auto",
-        display: "grid",
-        gridTemplateColumns: "1fr 1fr",
-        gap: "80px",
+        gap: "clamp(40px, 6vw, 80px)",
         alignItems: "center",
       }}>
         {/* Image placeholder */}
