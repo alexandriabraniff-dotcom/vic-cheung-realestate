@@ -201,6 +201,7 @@ body {
 
   .three-col-grid {
     grid-template-columns: 1fr !important;
+    gap: 36px !important;
   }
 
   .listings-grid {
