@@ -26,7 +26,7 @@ export default function Credentials() {
       padding: "120px 10vw",
     }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-        <div style={{ fontSize: 10, letterSpacing: "0.22em", color: "#0A0A0A", fontWeight: 600, marginBottom: 20, fontFamily: "system-ui, sans-serif" }}>
+        <div style={{ fontSize: 12, letterSpacing: "0.22em", color: "#0A0A0A", fontWeight: 600, marginBottom: 20, fontFamily: "system-ui, sans-serif" }}>
           CREDENTIALS
         </div>
         <h2 style={{

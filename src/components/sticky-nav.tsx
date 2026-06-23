@@ -51,7 +51,7 @@ export default function StickyNav({ alwaysVisible = false }: { alwaysVisible?: b
           }}>
             VIC CHEUNG
           </div>
-          <div style={{ fontSize: 8, color: "rgba(255,255,255,0.4)", letterSpacing: "0.2em", fontWeight: 500, marginTop: 1 }}>
+          <div style={{ fontSize: 11, color: "rgba(255,255,255,0.4)", letterSpacing: "0.2em", fontWeight: 500, marginTop: 1 }}>
             REALTOR® | VANCOUVER
           </div>
         </a>

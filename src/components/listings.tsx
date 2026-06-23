@@ -19,7 +19,7 @@ export default function FeaturedListings() {
           gap: 20,
         }}>
           <div>
-            <div style={{ fontSize: 10, letterSpacing: "0.22em", color: "#0A0A0A", fontWeight: 600, marginBottom: 16, fontFamily: "system-ui, sans-serif" }}>
+            <div style={{ fontSize: 12, letterSpacing: "0.22em", color: "#0A0A0A", fontWeight: 600, marginBottom: 16, fontFamily: "system-ui, sans-serif" }}>
               FEATURED PROPERTIES
             </div>
             <h2 style={{
@@ -74,7 +74,7 @@ export default function FeaturedListings() {
               <span style={{
                 background: "#0A0A0A",
                 color: "#0A0A0A",
-                fontSize: 9,
+                fontSize: 11,
                 letterSpacing: "0.18em",
                 fontWeight: 700,
                 padding: "5px 10px",
@@ -84,7 +84,7 @@ export default function FeaturedListings() {
               </span>
             </div>
             <div style={{ position: "absolute", bottom: 32, left: 32, right: 32 }}>
-              <div style={{ fontSize: 9, letterSpacing: "0.2em", color: "rgba(255,255,255,0.85)", marginBottom: 8, fontFamily: "system-ui, sans-serif" }}>
+              <div style={{ fontSize: 11, letterSpacing: "0.2em", color: "rgba(255,255,255,0.85)", marginBottom: 8, fontFamily: "system-ui, sans-serif" }}>
                 {featured.label}
               </div>
               <div style={{
@@ -108,7 +108,7 @@ export default function FeaturedListings() {
                 ].map(d => (
                   <div key={d.label} style={{ display: "flex", alignItems: "baseline", gap: 5 }}>
                     <span style={{ fontSize: 16, color: "#F8F8F8", fontFamily: "var(--font-display), Georgia, serif" }}>{d.val}</span>
-                    <span style={{ fontSize: 9, letterSpacing: "0.1em", color: "rgba(250,250,248,0.4)", fontFamily: "system-ui, sans-serif" }}>{d.label}</span>
+                    <span style={{ fontSize: 11, letterSpacing: "0.1em", color: "rgba(250,250,248,0.4)", fontFamily: "system-ui, sans-serif" }}>{d.label}</span>
                   </div>
                 ))}
               </div>
@@ -142,7 +142,7 @@ export default function FeaturedListings() {
                     <span style={{
                       background: "rgba(0,0,0,0.85)",
                       color: "rgba(250,250,248,0.55)",
-                      fontSize: 9,
+                      fontSize: 11,
                       letterSpacing: "0.16em",
                       fontWeight: 700,
                       padding: "5px 10px",
@@ -154,7 +154,7 @@ export default function FeaturedListings() {
                   </div>
                 )}
                 <div style={{ position: "absolute", bottom: 24, left: 24, right: 24 }}>
-                  <div style={{ fontSize: 9, letterSpacing: "0.18em", color: "rgba(255,255,255,0.75)", marginBottom: 6, fontFamily: "system-ui, sans-serif" }}>
+                  <div style={{ fontSize: 11, letterSpacing: "0.18em", color: "rgba(255,255,255,0.75)", marginBottom: 6, fontFamily: "system-ui, sans-serif" }}>
                     {listing.label}
                   </div>
                   <div style={{

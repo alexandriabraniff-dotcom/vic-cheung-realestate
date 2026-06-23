@@ -41,7 +41,7 @@ export default function About() {
 
         {/* Text */}
         <div>
-          <div style={{ fontSize: 10, letterSpacing: "0.22em", color: "#0A0A0A", fontWeight: 600, marginBottom: 20, fontFamily: "system-ui, sans-serif" }}>
+          <div style={{ fontSize: 12, letterSpacing: "0.22em", color: "#0A0A0A", fontWeight: 600, marginBottom: 20, fontFamily: "system-ui, sans-serif" }}>
             ABOUT VIC
           </div>
           <h2 style={{
@@ -72,7 +72,7 @@ export default function About() {
             ].map(item => (
               <div key={item.label} style={{ textAlign: "center" }}>
                 <div style={{ fontSize: 20, color: "#0A0A0A", marginBottom: 6 }}>{item.icon}</div>
-                <div style={{ fontSize: 10, letterSpacing: "0.12em", color: "#7A7A7A", fontFamily: "system-ui, sans-serif" }}>{item.label.toUpperCase()}</div>
+                <div style={{ fontSize: 12, letterSpacing: "0.12em", color: "#7A7A7A", fontFamily: "system-ui, sans-serif" }}>{item.label.toUpperCase()}</div>
               </div>
             ))}
           </div>
@@ -106,7 +106,7 @@ export default function About() {
             }}>
               {c.stat}
             </div>
-            <div style={{ fontSize: 10, letterSpacing: "0.16em", color: "#0A0A0A", fontWeight: 600, marginBottom: 10, fontFamily: "system-ui, sans-serif" }}>
+            <div style={{ fontSize: 12, letterSpacing: "0.16em", color: "#0A0A0A", fontWeight: 600, marginBottom: 10, fontFamily: "system-ui, sans-serif" }}>
               {c.label.toUpperCase()}
             </div>
             <p style={{ fontSize: 13, lineHeight: 1.7, color: "#6A6A6A", margin: 0, fontFamily: "system-ui, sans-serif" }}>

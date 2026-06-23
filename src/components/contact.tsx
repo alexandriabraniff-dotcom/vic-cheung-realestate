@@ -8,7 +8,7 @@ export default function Contact() {
       <div className="two-col-grid" style={{ maxWidth: 1200, margin: "0 auto", gap: "clamp(40px, 6vw, 80px)", alignItems: "start" }}>
         {/* Left */}
         <div>
-          <div style={{ fontSize: 10, letterSpacing: "0.22em", color: "#FFFFFF", fontWeight: 600, marginBottom: 20, fontFamily: "system-ui, sans-serif" }}>
+          <div style={{ fontSize: 12, letterSpacing: "0.22em", color: "#FFFFFF", fontWeight: 600, marginBottom: 20, fontFamily: "system-ui, sans-serif" }}>
             GET IN TOUCH
           </div>
           <h2 style={{
@@ -25,7 +25,7 @@ export default function Contact() {
           <form style={{ display: "flex", flexDirection: "column", gap: 20 }}>
             {["Full Name", "Email Address", "Phone Number"].map(field => (
               <div key={field}>
-                <label style={{ display: "block", fontSize: 10, letterSpacing: "0.16em", color: "#FFFFFF", marginBottom: 8, fontFamily: "system-ui, sans-serif" }}>
+                <label style={{ display: "block", fontSize: 12, letterSpacing: "0.16em", color: "#FFFFFF", marginBottom: 8, fontFamily: "system-ui, sans-serif" }}>
                   {field.toUpperCase()}
                 </label>
                 <input
@@ -46,7 +46,7 @@ export default function Contact() {
               </div>
             ))}
             <div>
-              <label style={{ display: "block", fontSize: 10, letterSpacing: "0.16em", color: "#FFFFFF", marginBottom: 8, fontFamily: "system-ui, sans-serif" }}>
+              <label style={{ display: "block", fontSize: 12, letterSpacing: "0.16em", color: "#FFFFFF", marginBottom: 8, fontFamily: "system-ui, sans-serif" }}>
                 MESSAGE
               </label>
               <textarea
@@ -87,22 +87,22 @@ export default function Contact() {
         <div className="contact-right-pad">
           <div style={{ borderLeft: "1px solid rgba(255,255,255,0.2)", paddingLeft: 40 }}>
             <div style={{ marginBottom: 36 }}>
-              <div style={{ fontSize: 10, letterSpacing: "0.18em", color: "#FFFFFF", fontWeight: 600, marginBottom: 10, fontFamily: "system-ui, sans-serif" }}>PHONE</div>
+              <div style={{ fontSize: 12, letterSpacing: "0.18em", color: "#FFFFFF", fontWeight: 600, marginBottom: 10, fontFamily: "system-ui, sans-serif" }}>PHONE</div>
               <div style={{ fontSize: 18, color: "#F8F8F8", fontFamily: "var(--font-display), Georgia, serif" }}>(236) 707-8262</div>
             </div>
             <div style={{ marginBottom: 36 }}>
-              <div style={{ fontSize: 10, letterSpacing: "0.18em", color: "#FFFFFF", fontWeight: 600, marginBottom: 10, fontFamily: "system-ui, sans-serif" }}>EMAIL</div>
+              <div style={{ fontSize: 12, letterSpacing: "0.18em", color: "#FFFFFF", fontWeight: 600, marginBottom: 10, fontFamily: "system-ui, sans-serif" }}>EMAIL</div>
               <div style={{ fontSize: 18, color: "#F8F8F8", fontFamily: "var(--font-display), Georgia, serif" }}>vic@vancity.realestate</div>
             </div>
             <div style={{ marginBottom: 48 }}>
-              <div style={{ fontSize: 10, letterSpacing: "0.18em", color: "#FFFFFF", fontWeight: 600, marginBottom: 10, fontFamily: "system-ui, sans-serif" }}>OFFICE</div>
+              <div style={{ fontSize: 12, letterSpacing: "0.18em", color: "#FFFFFF", fontWeight: 600, marginBottom: 10, fontFamily: "system-ui, sans-serif" }}>OFFICE</div>
               <div style={{ fontSize: 15, color: "rgba(250,250,248,0.7)", lineHeight: 1.6, fontFamily: "system-ui, sans-serif" }}>
                 #110-1020 Mainland Street<br />
                 Vancouver, BC V6B 2T5
               </div>
             </div>
             <div>
-              <div style={{ fontSize: 10, letterSpacing: "0.18em", color: "#FFFFFF", fontWeight: 600, marginBottom: 16, fontFamily: "system-ui, sans-serif" }}>FOLLOW</div>
+              <div style={{ fontSize: 12, letterSpacing: "0.18em", color: "#FFFFFF", fontWeight: 600, marginBottom: 16, fontFamily: "system-ui, sans-serif" }}>FOLLOW</div>
               <div style={{ display: "flex", gap: 20, flexWrap: "wrap" }}>
                 {["Instagram", "YouTube", "Facebook", "Twitter"].map(soc => (
                   <a key={soc} href="#" style={{

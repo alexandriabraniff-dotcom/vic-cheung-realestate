@@ -48,7 +48,7 @@ export default function Services() {
           gap: 16,
         }}>
           <div>
-            <div style={{ fontSize: 10, letterSpacing: "0.22em", color: "rgba(255,255,255,0.35)", fontWeight: 600, marginBottom: 10, fontFamily: "system-ui, sans-serif" }}>
+            <div style={{ fontSize: 12, letterSpacing: "0.22em", color: "rgba(255,255,255,0.35)", fontWeight: 600, marginBottom: 10, fontFamily: "system-ui, sans-serif" }}>
               SERVICES
             </div>
             <h2 style={{
@@ -63,7 +63,7 @@ export default function Services() {
             </h2>
           </div>
           <a href="/#contact" style={{
-            fontSize: 10,
+            fontSize: 12,
             letterSpacing: "0.14em",
             color: "rgba(255,255,255,0.5)",
             textDecoration: "none",
@@ -106,7 +106,7 @@ export default function Services() {
 
               {/* Title */}
               <div>
-                <div style={{ fontSize: 9, letterSpacing: "0.16em", color: "rgba(250,250,248,0.3)", fontFamily: "system-ui, sans-serif", marginBottom: 6 }}>
+                <div style={{ fontSize: 11, letterSpacing: "0.16em", color: "rgba(250,250,248,0.3)", fontFamily: "system-ui, sans-serif", marginBottom: 6 }}>
                   {s.subtitle.toUpperCase()}
                 </div>
                 <h3 style={{
@@ -137,7 +137,7 @@ export default function Services() {
               <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginTop: "auto" }}>
                 {s.tags.map(tag => (
                   <span key={tag} style={{
-                    fontSize: 8,
+                    fontSize: 11,
                     letterSpacing: "0.1em",
                     color: "rgba(250,250,248,0.4)",
                     border: "1px solid rgba(255,255,255,0.12)",

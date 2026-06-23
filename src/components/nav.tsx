@@ -44,7 +44,7 @@ export default function Nav() {
           }}>
             VIC CHEUNG
           </div>
-          <div style={{ fontSize: 9, color: "rgba(255,255,255,0.45)", letterSpacing: "0.2em", fontWeight: 500, marginTop: 1 }}>
+          <div style={{ fontSize: 11, color: "rgba(255,255,255,0.45)", letterSpacing: "0.2em", fontWeight: 500, marginTop: 1 }}>
             REALTOR® | VANCOUVER
           </div>
         </a>

@@ -43,10 +43,10 @@ export default function Hero() {
           padding: "12px 20px",
           borderLeft: "2px solid #FFFFFF",
         }}>
-          <div style={{ fontSize: 9, letterSpacing: "0.2em", color: "#FFFFFF", fontFamily: "system-ui, sans-serif" }}>
+          <div style={{ fontSize: 11, letterSpacing: "0.2em", color: "#FFFFFF", fontFamily: "system-ui, sans-serif" }}>
             TEAM UPHAUS
           </div>
-          <div style={{ fontSize: 9, letterSpacing: "0.15em", color: "rgba(250,250,248,0.45)", marginTop: 3, fontFamily: "system-ui, sans-serif" }}>
+          <div style={{ fontSize: 11, letterSpacing: "0.15em", color: "rgba(250,250,248,0.45)", marginTop: 3, fontFamily: "system-ui, sans-serif" }}>
             RENT IT FURNISHED REALTY
           </div>
         </div>
@@ -120,7 +120,7 @@ export default function Hero() {
           borderTop: "1px solid rgba(255,255,255,0.12)",
         }}>
           <div style={{
-            fontSize: 9,
+            fontSize: 11,
             letterSpacing: "0.2em",
             color: "rgba(255,255,255,0.6)",
             fontFamily: "system-ui, sans-serif",
@@ -176,7 +176,7 @@ export default function Hero() {
                     background: "linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 55%)",
                   }} />
                   <div style={{ position: "absolute", bottom: 10, left: 12 }}>
-                    <div style={{ fontSize: 8, letterSpacing: "0.14em", color: "rgba(255,255,255,0.75)", fontFamily: "system-ui, sans-serif", marginBottom: 3 }}>
+                    <div style={{ fontSize: 11, letterSpacing: "0.14em", color: "rgba(255,255,255,0.75)", fontFamily: "system-ui, sans-serif", marginBottom: 3 }}>
                       {listing.label}
                     </div>
                     <div style={{
@@ -193,7 +193,7 @@ export default function Hero() {
                 {/* Details */}
                 <div style={{ padding: "12px 12px 14px" }}>
                   <div style={{
-                    fontSize: 10,
+                    fontSize: 12,
                     color: "rgba(250,250,248,0.55)",
                     fontFamily: "system-ui, sans-serif",
                     marginBottom: 8,
@@ -211,7 +211,7 @@ export default function Hero() {
                     ].map(d => (
                       <div key={d.label}>
                         <div style={{ fontSize: 12, color: "#F8F8F8", fontFamily: "var(--font-display), Georgia, serif" }}>{d.val}</div>
-                        <div style={{ fontSize: 8, letterSpacing: "0.1em", color: "rgba(250,250,248,0.3)", fontFamily: "system-ui, sans-serif" }}>{d.label}</div>
+                        <div style={{ fontSize: 11, letterSpacing: "0.1em", color: "rgba(250,250,248,0.3)", fontFamily: "system-ui, sans-serif" }}>{d.label}</div>
                       </div>
                     ))}
                   </div>

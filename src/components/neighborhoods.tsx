@@ -18,7 +18,7 @@ export default function Neighborhoods() {
         flexDirection: "column",
         justifyContent: "center",
       }}>
-        <div style={{ fontSize: 10, letterSpacing: "0.22em", color: "#FFFFFF", fontWeight: 600, marginBottom: 20, fontFamily: "system-ui, sans-serif" }}>
+        <div style={{ fontSize: 12, letterSpacing: "0.22em", color: "#FFFFFF", fontWeight: 600, marginBottom: 20, fontFamily: "system-ui, sans-serif" }}>
           MARKET COVERAGE
         </div>
         <h2 style={{
@@ -119,7 +119,7 @@ export default function Neighborhoods() {
           }}>
             &ldquo;Vancouver&apos;s market rewards those who understand it from the inside.&rdquo;
           </div>
-          <div style={{ fontSize: 9, letterSpacing: "0.16em", color: "#FFFFFF", fontFamily: "system-ui, sans-serif" }}>
+          <div style={{ fontSize: 11, letterSpacing: "0.16em", color: "#FFFFFF", fontFamily: "system-ui, sans-serif" }}>
             VIC CHEUNG — REALTOR®
           </div>
         </div>

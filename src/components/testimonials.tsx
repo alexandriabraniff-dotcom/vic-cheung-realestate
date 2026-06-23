@@ -50,7 +50,7 @@ export default function Testimonials() {
       }}>
         <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
           <GoogleLogo />
-          <span style={{ fontSize: 10, letterSpacing: "0.2em", color: "rgba(250,250,248,0.4)", fontFamily: "system-ui, sans-serif" }}>
+          <span style={{ fontSize: 12, letterSpacing: "0.2em", color: "rgba(250,250,248,0.4)", fontFamily: "system-ui, sans-serif" }}>
             GOOGLE REVIEWS
           </span>
         </div>
@@ -59,7 +59,7 @@ export default function Testimonials() {
           target="_blank"
           rel="noopener noreferrer"
           style={{
-            fontSize: 10,
+            fontSize: 12,
             letterSpacing: "0.14em",
             color: "rgba(250,250,248,0.4)",
             textDecoration: "none",
@@ -138,7 +138,7 @@ export default function Testimonials() {
               </div>
               <div>
                 <div style={{ fontSize: 12, color: "#F8F8F8", fontFamily: "system-ui, sans-serif", fontWeight: 500 }}>{r.name}</div>
-                <div style={{ fontSize: 10, color: "rgba(250,250,248,0.3)", fontFamily: "system-ui, sans-serif", marginTop: 2 }}>{r.date}</div>
+                <div style={{ fontSize: 12, color: "rgba(250,250,248,0.3)", fontFamily: "system-ui, sans-serif", marginTop: 2 }}>{r.date}</div>
               </div>
               <div style={{ marginLeft: "auto" }}>
                 <GoogleLogo />

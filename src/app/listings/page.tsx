@@ -30,7 +30,7 @@ export default function ListingsPage() {
           flexDirection: "column",
           justifyContent: "center",
         }}>
-          <div style={{ fontSize: 10, letterSpacing: "0.22em", color: "#FFFFFF", fontWeight: 600, marginBottom: 20, fontFamily: "system-ui, sans-serif" }}>
+          <div style={{ fontSize: 12, letterSpacing: "0.22em", color: "#FFFFFF", fontWeight: 600, marginBottom: 20, fontFamily: "system-ui, sans-serif" }}>
             VIC CHEUNG — REALTOR®
           </div>
           <h1 style={{
@@ -62,7 +62,7 @@ export default function ListingsPage() {
       {/* Active listings */}
       <div style={{ background: "#F8F8F8", padding: "clamp(60px, 8vw, 100px) 10vw" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <div style={{ fontSize: 10, letterSpacing: "0.22em", color: "#0A0A0A", fontWeight: 600, marginBottom: 48, fontFamily: "system-ui, sans-serif" }}>
+          <div style={{ fontSize: 12, letterSpacing: "0.22em", color: "#0A0A0A", fontWeight: 600, marginBottom: 48, fontFamily: "system-ui, sans-serif" }}>
             ACTIVE LISTINGS ({active.length})
           </div>
           <div className="three-col-grid" style={{ gap: 24 }}>
@@ -76,7 +76,7 @@ export default function ListingsPage() {
       {/* Sold listings */}
       <div style={{ background: "#F0F0F0", padding: "clamp(60px, 8vw, 100px) 10vw" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <div style={{ fontSize: 10, letterSpacing: "0.22em", color: "#0A0A0A", fontWeight: 600, marginBottom: 48, fontFamily: "system-ui, sans-serif" }}>
+          <div style={{ fontSize: 12, letterSpacing: "0.22em", color: "#0A0A0A", fontWeight: 600, marginBottom: 48, fontFamily: "system-ui, sans-serif" }}>
             SOLD ({sold.length})
           </div>
           <div className="three-col-grid" style={{ gap: 24 }}>
@@ -92,7 +92,7 @@ export default function ListingsPage() {
         <div className="two-col-grid" style={{ maxWidth: 1200, margin: "0 auto", gap: "clamp(32px, 6vw, 80px)", alignItems: "flex-end" }}>
           {/* Left: heading */}
           <div>
-            <div style={{ fontSize: 10, letterSpacing: "0.22em", color: "#FFFFFF", fontWeight: 600, marginBottom: 20, fontFamily: "system-ui, sans-serif" }}>
+            <div style={{ fontSize: 12, letterSpacing: "0.22em", color: "#FFFFFF", fontWeight: 600, marginBottom: 20, fontFamily: "system-ui, sans-serif" }}>
               WORK WITH VIC
             </div>
             <h2 style={{
@@ -157,7 +157,7 @@ function ListingCard({ listing }: { listing: Listing }) {
           <span style={{
             background: listing.status === "Active" ? "#FFFFFF" : "rgba(0,0,0,0.8)",
             color: listing.status === "Active" ? "#0A0A0A" : "rgba(250,250,248,0.6)",
-            fontSize: 9,
+            fontSize: 11,
             letterSpacing: "0.18em",
             fontWeight: 700,
             padding: "4px 10px",
@@ -167,7 +167,7 @@ function ListingCard({ listing }: { listing: Listing }) {
           </span>
         </div>
         <div style={{ position: "absolute", bottom: 16, left: 16 }}>
-          <div style={{ fontSize: 9, letterSpacing: "0.18em", color: "rgba(255,255,255,0.9)", fontFamily: "system-ui, sans-serif", marginBottom: 4 }}>
+          <div style={{ fontSize: 11, letterSpacing: "0.18em", color: "rgba(255,255,255,0.9)", fontFamily: "system-ui, sans-serif", marginBottom: 4 }}>
             {listing.label}
           </div>
           <div style={{
@@ -195,7 +195,7 @@ function ListingCard({ listing }: { listing: Listing }) {
           ].map(d => (
             <div key={d.label}>
               <div style={{ fontSize: 16, color: "#0A0A0A", fontFamily: "var(--font-display), Georgia, serif", fontWeight: 400 }}>{d.val}</div>
-              <div style={{ fontSize: 9, letterSpacing: "0.12em", color: "#ABABAB", fontFamily: "system-ui, sans-serif" }}>{d.label.toUpperCase()}</div>
+              <div style={{ fontSize: 11, letterSpacing: "0.12em", color: "#ABABAB", fontFamily: "system-ui, sans-serif" }}>{d.label.toUpperCase()}</div>
             </div>
           ))}
         </div>
