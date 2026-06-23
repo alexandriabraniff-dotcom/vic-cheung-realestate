@@ -21,16 +21,7 @@ export default function Nav() {
       background: "transparent",
     }}>
       {/* DESIGNER CREDIT BANNER — remove after client payment */}
-      <div style={{
-        width: "100%",
-        background: "#0A0A0A",
-        color: "#FFFFFF",
-        textAlign: "center",
-        padding: "8px 16px",
-        fontSize: "11px",
-        letterSpacing: "0.08em",
-        fontFamily: "system-ui, sans-serif",
-      }}>
+      <div className="designer-banner">
         Website designed by Alexandria Braniff — hello@alexandriabraniff.com
       </div>
       <div style={{

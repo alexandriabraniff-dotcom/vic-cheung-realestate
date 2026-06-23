@@ -117,6 +117,20 @@ section[id] {
   padding-top: 80px;
 }
 
+.designer-banner {
+  width: 100%;
+  background: #0A0A0A;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 8px 16px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  font-family: system-ui, sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .nav-desktop-links {
   display: flex;
   gap: 36px;

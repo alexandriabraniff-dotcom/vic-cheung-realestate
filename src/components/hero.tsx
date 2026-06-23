@@ -10,10 +10,9 @@ export default function Hero() {
       {/* Left: Agent Portrait — replace src with /vic.jpg when available */}
       <div className="hero-portrait" style={{ position: "relative", overflow: "hidden" }}>
         <img
-          src="/vic.jpg"
+          src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=1000&q=85"
           alt="Vic Cheung"
           referrerPolicy="no-referrer"
-          onError={e => { (e.currentTarget as HTMLImageElement).src = "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=1000&q=85"; }}
           style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
         />
         <div style={{
@@ -59,7 +58,7 @@ export default function Hero() {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-        padding: "clamp(80px, 10vw, 120px) clamp(32px, 8vw, 80px) clamp(60px, 8vw, 100px) clamp(28px, 6vw, 64px)",
+        padding: "clamp(40px, 8vw, 120px) clamp(28px, 6vw, 64px) clamp(40px, 8vw, 100px)",
         position: "relative",
       }}>
         {/* Left edge line */}
