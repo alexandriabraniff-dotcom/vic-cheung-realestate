@@ -114,7 +114,7 @@ export default function Hero() {
         </div>
 
         {/* Mini listings scroll */}
-        <div style={{
+        <div className="hero-mini-listings" style={{
           marginTop: 52,
           paddingTop: 32,
           borderTop: "1px solid rgba(255,255,255,0.12)",

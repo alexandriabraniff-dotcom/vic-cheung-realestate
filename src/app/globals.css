@@ -194,6 +194,11 @@ section[id] {
     display: none !important;
   }
 
+  /* ── Hero: hide mini listings on mobile ── */
+  .hero-mini-listings {
+    display: none !important;
+  }
+
   /* ── Contact ── */
   .contact-right-pad {
     padding-top: 0 !important;
