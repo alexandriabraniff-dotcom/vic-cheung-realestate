@@ -1,41 +1,12 @@
 import Nav from "@/components/nav";
 import Footer from "@/components/footer";
-import { allListings } from "@/components/listings";
+import { allListings, extraListings } from "@/lib/listings-data";
+import type { Listing } from "@/lib/listings-data";
 
 export const metadata = {
   title: "All Listings | Vic Cheung Vancouver Real Estate",
   description: "Browse Vic Cheung's current and past property listings across Vancouver's most sought-after neighbourhoods.",
 };
-
-const extraListings = [
-  {
-    image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80",
-    price: "$4,500,000",
-    address: "1 - 2688 Marine Drive",
-    neighbourhood: "West Vancouver",
-    beds: 5, baths: 4, sqft: "4,200",
-    status: "Active",
-    label: "DUNDARAVE ESTATE",
-  },
-  {
-    image: "https://images.unsplash.com/photo-1613977257363-707ba9348227?w=800&q=80",
-    price: "$1,250,000",
-    address: "2201 - 689 Abbott Street",
-    neighbourhood: "Crosstown",
-    beds: 2, baths: 2, sqft: "980",
-    status: "Sold",
-    label: "THE ESPANA",
-  },
-  {
-    image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80",
-    price: "$2,650,000",
-    address: "1502 - 1499 W Georgia Street",
-    neighbourhood: "West End",
-    beds: 3, baths: 2, sqft: "1,820",
-    status: "Active",
-    label: "GEORGIA TOWERS",
-  },
-];
 
 const combinedListings = [...allListings, ...extraListings];
 
@@ -155,7 +126,7 @@ export default function ListingsPage() {
   );
 }
 
-function ListingCard({ listing }: { listing: typeof allListings[0] }) {
+function ListingCard({ listing }: { listing: Listing }) {
   return (
     <div style={{ background: "#FFFFFF", overflow: "hidden" }}>
       <div style={{ position: "relative", overflow: "hidden" }}>
