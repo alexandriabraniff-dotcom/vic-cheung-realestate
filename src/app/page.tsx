@@ -15,8 +15,8 @@ export default function Home() {
       {/* DESIGNER CREDIT BANNER - remove only after client payment */}
       <div style={{
         width: "100%",
-        background: "#0B1628",
-        color: "#C9A96E",
+        background: "#0A0A0A",
+        color: "#FFFFFF",
         textAlign: "center",
         padding: "10px 16px",
         fontSize: "12px",

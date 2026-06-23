@@ -12,30 +12,30 @@ export default function Neighborhoods() {
     <section id="neighbourhoods" className="two-col-grid" style={{ minHeight: 560 }}>
       {/* Left: dark text panel */}
       <div style={{
-        background: "#0B1628",
+        background: "#0A0A0A",
         padding: "clamp(60px, 10vw, 100px) clamp(32px, 8vw, 80px) clamp(60px, 8vw, 100px) clamp(32px, 10vw, 10vw)",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
       }}>
-        <div style={{ fontSize: 10, letterSpacing: "0.22em", color: "#C9A96E", fontWeight: 600, marginBottom: 20, fontFamily: "system-ui, sans-serif" }}>
+        <div style={{ fontSize: 10, letterSpacing: "0.22em", color: "#FFFFFF", fontWeight: 600, marginBottom: 20, fontFamily: "system-ui, sans-serif" }}>
           MARKET COVERAGE
         </div>
         <h2 style={{
           fontFamily: "var(--font-display), Georgia, serif",
           fontSize: "clamp(28px, 3vw, 48px)",
           fontWeight: 400,
-          color: "#FAFAF8",
+          color: "#F8F8F8",
           lineHeight: 1.15,
           margin: "0 0 44px 0",
         }}>
-          The<br /><em style={{ color: "#C9A96E", fontStyle: "italic" }}>Neighbourhoods.</em>
+          The<br /><em style={{ color: "#FFFFFF", fontStyle: "italic" }}>Neighbourhoods.</em>
         </h2>
 
         <div>
           {hoods.map((hood, i) => (
             <div key={i} style={{
-              borderBottom: "1px solid rgba(201,169,110,0.1)",
+              borderBottom: "1px solid rgba(255,255,255,0.1)",
               padding: "16px 0",
               display: "flex",
               alignItems: "baseline",
@@ -46,7 +46,7 @@ export default function Neighborhoods() {
                 fontFamily: "var(--font-display), Georgia, serif",
                 fontSize: "clamp(15px, 1.5vw, 18px)",
                 fontWeight: 400,
-                color: "#FAFAF8",
+                color: "#F8F8F8",
                 minWidth: 160,
               }}>
                 {hood.name}
@@ -67,14 +67,14 @@ export default function Neighborhoods() {
           marginTop: 40,
           fontSize: 11,
           letterSpacing: "0.14em",
-          color: "#C9A96E",
+          color: "#FFFFFF",
           textDecoration: "none",
           fontWeight: 600,
           fontFamily: "system-ui, sans-serif",
           display: "inline-flex",
           alignItems: "center",
           gap: 8,
-          border: "1px solid rgba(201,169,110,0.3)",
+          border: "1px solid rgba(255,255,255,0.3)",
           padding: "13px 28px",
           alignSelf: "flex-start",
         }}>
@@ -118,7 +118,7 @@ export default function Neighborhoods() {
           }}>
             &ldquo;Vancouver&apos;s market rewards those who understand it from the inside.&rdquo;
           </div>
-          <div style={{ fontSize: 9, letterSpacing: "0.16em", color: "#C9A96E", fontFamily: "system-ui, sans-serif" }}>
+          <div style={{ fontSize: 9, letterSpacing: "0.16em", color: "#FFFFFF", fontFamily: "system-ui, sans-serif" }}>
             VIC CHEUNG — REALTOR®
           </div>
         </div>

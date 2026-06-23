@@ -2,11 +2,14 @@
 import { useState, useEffect } from "react";
 
 export default function Nav() {
-  const [scrolled, setScrolled] = useState(false);
+  const [pastHero, setPastHero] = useState(false);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 60);
+    const onScroll = () => {
+      const heroHeight = window.innerHeight;
+      setPastHero(window.scrollY > heroHeight * 0.85);
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
     return () => window.removeEventListener("scroll", onScroll);
@@ -20,12 +23,6 @@ export default function Nav() {
     { label: "Contact", href: "#contact" },
   ];
 
-  const bg = "transparent";
-  const border = "none";
-  const logoColor = "#FAFAF8";
-  const linkColor = "rgba(250,250,248,0.88)";
-  const hamColor = "#FAFAF8";
-
   return (
     <nav style={{
       position: "fixed",
@@ -33,9 +30,9 @@ export default function Nav() {
       left: 0,
       right: 0,
       zIndex: 1000,
-      background: bg,
-      backdropFilter: "none",
-      borderBottom: border,
+      background: pastHero ? "#0A0A0A" : "transparent",
+      borderBottom: pastHero ? "1px solid rgba(255,255,255,0.08)" : "none",
+      transition: "background 0.35s ease, border-color 0.35s ease",
     }}>
       <div style={{
         maxWidth: 1280,
@@ -52,13 +49,12 @@ export default function Nav() {
             fontFamily: "var(--font-display), Georgia, serif",
             fontSize: 19,
             fontWeight: 500,
-            color: logoColor,
+            color: "#FFFFFF",
             letterSpacing: "0.05em",
-            transition: "color 0.3s",
           }}>
             VIC CHEUNG
           </div>
-          <div style={{ fontSize: 9, color: "#C9A96E", letterSpacing: "0.2em", fontWeight: 500, marginTop: 1 }}>
+          <div style={{ fontSize: 9, color: "rgba(255,255,255,0.45)", letterSpacing: "0.2em", fontWeight: 500, marginTop: 1 }}>
             REALTOR® | VANCOUVER
           </div>
         </a>
@@ -72,13 +68,13 @@ export default function Nav() {
               style={{
                 fontSize: 11,
                 letterSpacing: "0.14em",
-                color: linkColor,
+                color: "rgba(255,255,255,0.8)",
                 textDecoration: "none",
                 fontWeight: 500,
                 transition: "color 0.2s",
               }}
-              onMouseOver={e => (e.currentTarget.style.color = "#C9A96E")}
-              onMouseOut={e => (e.currentTarget.style.color = linkColor)}
+              onMouseOver={e => (e.currentTarget.style.color = "#FFFFFF")}
+              onMouseOut={e => (e.currentTarget.style.color = "rgba(255,255,255,0.8)")}
             >
               {l.label.toUpperCase()}
             </a>
@@ -86,9 +82,9 @@ export default function Nav() {
           <a
             href="#contact"
             style={{
-              background: "rgba(201,169,110,0.12)",
-              color: "#C9A96E",
-              border: "1px solid rgba(201,169,110,0.45)",
+              background: "rgba(255,255,255,0.1)",
+              color: "#FFFFFF",
+              border: "1px solid rgba(255,255,255,0.3)",
               padding: "10px 22px",
               fontSize: 11,
               letterSpacing: "0.14em",
@@ -98,8 +94,8 @@ export default function Nav() {
               display: "inline-block",
               whiteSpace: "nowrap",
             }}
-            onMouseOver={e => { e.currentTarget.style.background = "#C9A96E"; e.currentTarget.style.color = "#0B1628"; }}
-            onMouseOut={e => { e.currentTarget.style.background = "rgba(201,169,110,0.12)"; e.currentTarget.style.color = "#C9A96E"; }}
+            onMouseOver={e => { e.currentTarget.style.background = "#FFFFFF"; e.currentTarget.style.color = "#0A0A0A"; }}
+            onMouseOut={e => { e.currentTarget.style.background = "rgba(255,255,255,0.1)"; e.currentTarget.style.color = "#FFFFFF"; }}
           >
             GET IN TOUCH
           </a>
@@ -119,17 +115,17 @@ export default function Nav() {
           }}
           aria-label="Toggle menu"
         >
-          <span style={{ display: "block", width: 22, height: 1.5, background: hamColor, transition: "all 0.25s", transform: open ? "rotate(45deg) translate(5px, 5px)" : "none" }} />
-          <span style={{ display: "block", width: 22, height: 1.5, background: hamColor, transition: "all 0.25s", opacity: open ? 0 : 1 }} />
-          <span style={{ display: "block", width: 22, height: 1.5, background: hamColor, transition: "all 0.25s", transform: open ? "rotate(-45deg) translate(5px, -5px)" : "none" }} />
+          <span style={{ display: "block", width: 22, height: 1.5, background: "#FFFFFF", transition: "all 0.25s", transform: open ? "rotate(45deg) translate(5px, 5px)" : "none" }} />
+          <span style={{ display: "block", width: 22, height: 1.5, background: "#FFFFFF", transition: "all 0.25s", opacity: open ? 0 : 1 }} />
+          <span style={{ display: "block", width: 22, height: 1.5, background: "#FFFFFF", transition: "all 0.25s", transform: open ? "rotate(-45deg) translate(5px, -5px)" : "none" }} />
         </button>
       </div>
 
       {/* Mobile dropdown */}
       {open && (
         <div style={{
-          background: "rgba(250,250,248,0.98)",
-          borderTop: "1px solid #E0DDD8",
+          background: "#0A0A0A",
+          borderTop: "1px solid rgba(255,255,255,0.08)",
           padding: "20px 32px 28px",
           display: "flex",
           flexDirection: "column",
@@ -140,7 +136,7 @@ export default function Nav() {
               key={l.label}
               href={l.href}
               onClick={() => setOpen(false)}
-              style={{ fontSize: 12, letterSpacing: "0.14em", color: "#0D1117", textDecoration: "none", fontWeight: 500 }}
+              style={{ fontSize: 12, letterSpacing: "0.14em", color: "rgba(255,255,255,0.8)", textDecoration: "none", fontWeight: 500 }}
             >
               {l.label.toUpperCase()}
             </a>
@@ -149,8 +145,8 @@ export default function Nav() {
             href="#contact"
             onClick={() => setOpen(false)}
             style={{
-              background: "#0B1628",
-              color: "#C9A96E",
+              background: "#FFFFFF",
+              color: "#0A0A0A",
               padding: "12px 24px",
               fontSize: 11,
               letterSpacing: "0.14em",

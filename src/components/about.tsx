@@ -1,7 +1,7 @@
 export default function About() {
   return (
     <section id="about" style={{
-      background: "#FAFAF8",
+      background: "#F8F8F8",
       padding: "120px 10vw",
     }}>
       <div className="two-col-grid" style={{
@@ -13,7 +13,7 @@ export default function About() {
         {/* Image placeholder */}
         <div style={{
           aspectRatio: "4/5",
-          background: "#EAE8E4",
+          background: "#E8E8E8",
           position: "relative",
           overflow: "hidden",
         }}>
@@ -29,26 +29,26 @@ export default function About() {
             fontSize: 12,
             letterSpacing: "0.1em",
           }}>
-            <div style={{ width: 40, height: 40, border: "1px solid #C9A96E", display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <svg width="20" height="20" fill="none" stroke="#C9A96E" strokeWidth="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+            <div style={{ width: 40, height: 40, border: "1px solid #0A0A0A", display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <svg width="20" height="20" fill="none" stroke="#0A0A0A" strokeWidth="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
             </div>
             AGENT PHOTO
           </div>
           {/* Gold corner accent */}
-          <div style={{ position: "absolute", top: 20, left: 20, width: 60, height: 60, borderTop: "1px solid #C9A96E", borderLeft: "1px solid #C9A96E" }} />
-          <div style={{ position: "absolute", bottom: 20, right: 20, width: 60, height: 60, borderBottom: "1px solid #C9A96E", borderRight: "1px solid #C9A96E" }} />
+          <div style={{ position: "absolute", top: 20, left: 20, width: 60, height: 60, borderTop: "1px solid #0A0A0A", borderLeft: "1px solid #0A0A0A" }} />
+          <div style={{ position: "absolute", bottom: 20, right: 20, width: 60, height: 60, borderBottom: "1px solid #0A0A0A", borderRight: "1px solid #0A0A0A" }} />
         </div>
 
         {/* Text */}
         <div>
-          <div style={{ fontSize: 10, letterSpacing: "0.22em", color: "#C9A96E", fontWeight: 600, marginBottom: 20, fontFamily: "system-ui, sans-serif" }}>
+          <div style={{ fontSize: 10, letterSpacing: "0.22em", color: "#0A0A0A", fontWeight: 600, marginBottom: 20, fontFamily: "system-ui, sans-serif" }}>
             ABOUT VIC
           </div>
           <h2 style={{
             fontFamily: "var(--font-display), Georgia, serif",
             fontSize: "clamp(32px, 3.5vw, 52px)",
             fontWeight: 400,
-            color: "#0B1628",
+            color: "#0A0A0A",
             lineHeight: 1.15,
             margin: "0 0 32px 0",
           }}>
@@ -71,7 +71,7 @@ export default function About() {
               { label: "Development", icon: "◈" },
             ].map(item => (
               <div key={item.label} style={{ textAlign: "center" }}>
-                <div style={{ fontSize: 20, color: "#C9A96E", marginBottom: 6 }}>{item.icon}</div>
+                <div style={{ fontSize: 20, color: "#0A0A0A", marginBottom: 6 }}>{item.icon}</div>
                 <div style={{ fontSize: 10, letterSpacing: "0.12em", color: "#7A7A7A", fontFamily: "system-ui, sans-serif" }}>{item.label.toUpperCase()}</div>
               </div>
             ))}

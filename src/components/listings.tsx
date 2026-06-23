@@ -7,7 +7,7 @@ export default function FeaturedListings() {
   const [featured, ...rest] = allListings;
 
   return (
-    <section id="listings" style={{ background: "#FAFAF8", padding: "clamp(60px, 10vw, 120px) 10vw" }}>
+    <section id="listings" style={{ background: "#F8F8F8", padding: "clamp(60px, 10vw, 120px) 10vw" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         {/* Header */}
         <div style={{
@@ -19,14 +19,14 @@ export default function FeaturedListings() {
           gap: 20,
         }}>
           <div>
-            <div style={{ fontSize: 10, letterSpacing: "0.22em", color: "#C9A96E", fontWeight: 600, marginBottom: 16, fontFamily: "system-ui, sans-serif" }}>
+            <div style={{ fontSize: 10, letterSpacing: "0.22em", color: "#0A0A0A", fontWeight: 600, marginBottom: 16, fontFamily: "system-ui, sans-serif" }}>
               FEATURED PROPERTIES
             </div>
             <h2 style={{
               fontFamily: "var(--font-display), Georgia, serif",
               fontSize: "clamp(28px, 3.5vw, 52px)",
               fontWeight: 400,
-              color: "#0B1628",
+              color: "#0A0A0A",
               margin: 0,
               lineHeight: 1.15,
             }}>
@@ -36,11 +36,11 @@ export default function FeaturedListings() {
           <a href="/listings" style={{
             fontSize: 11,
             letterSpacing: "0.14em",
-            color: "#0B1628",
+            color: "#0A0A0A",
             textDecoration: "none",
             fontWeight: 600,
             fontFamily: "system-ui, sans-serif",
-            borderBottom: "1px solid #C9A96E",
+            borderBottom: "1px solid #0A0A0A",
             paddingBottom: 3,
             whiteSpace: "nowrap",
           }}>
@@ -49,7 +49,7 @@ export default function FeaturedListings() {
         </div>
 
         {/* Editorial grid: large card left + 2 stacked right */}
-        <div className="listings-grid" style={{ gap: 3, background: "#E0DDD8" }}>
+        <div className="listings-grid" style={{ gap: 3, background: "#E0E0E0" }}>
           {/* Featured large card */}
           <div style={{ position: "relative", overflow: "hidden" }}>
             <img
@@ -71,8 +71,8 @@ export default function FeaturedListings() {
             }} />
             <div style={{ position: "absolute", top: 24, left: 24 }}>
               <span style={{
-                background: "#C9A96E",
-                color: "#0B1628",
+                background: "#0A0A0A",
+                color: "#0A0A0A",
                 fontSize: 9,
                 letterSpacing: "0.18em",
                 fontWeight: 700,
@@ -83,14 +83,14 @@ export default function FeaturedListings() {
               </span>
             </div>
             <div style={{ position: "absolute", bottom: 32, left: 32, right: 32 }}>
-              <div style={{ fontSize: 9, letterSpacing: "0.2em", color: "rgba(201,169,110,0.85)", marginBottom: 8, fontFamily: "system-ui, sans-serif" }}>
+              <div style={{ fontSize: 9, letterSpacing: "0.2em", color: "rgba(255,255,255,0.85)", marginBottom: 8, fontFamily: "system-ui, sans-serif" }}>
                 {featured.label}
               </div>
               <div style={{
                 fontFamily: "var(--font-display), Georgia, serif",
                 fontSize: "clamp(26px, 3vw, 38px)",
                 fontWeight: 300,
-                color: "#FAFAF8",
+                color: "#F8F8F8",
                 lineHeight: 1,
                 marginBottom: 8,
               }}>
@@ -106,7 +106,7 @@ export default function FeaturedListings() {
                   { val: featured.sqft, label: "SQFT" },
                 ].map(d => (
                   <div key={d.label} style={{ display: "flex", alignItems: "baseline", gap: 5 }}>
-                    <span style={{ fontSize: 16, color: "#FAFAF8", fontFamily: "var(--font-display), Georgia, serif" }}>{d.val}</span>
+                    <span style={{ fontSize: 16, color: "#F8F8F8", fontFamily: "var(--font-display), Georgia, serif" }}>{d.val}</span>
                     <span style={{ fontSize: 9, letterSpacing: "0.1em", color: "rgba(250,250,248,0.4)", fontFamily: "system-ui, sans-serif" }}>{d.label}</span>
                   </div>
                 ))}
@@ -138,28 +138,28 @@ export default function FeaturedListings() {
                 {listing.status === "Sold" && (
                   <div style={{ position: "absolute", top: 20, left: 20 }}>
                     <span style={{
-                      background: "rgba(11,22,40,0.85)",
+                      background: "rgba(0,0,0,0.85)",
                       color: "rgba(250,250,248,0.55)",
                       fontSize: 9,
                       letterSpacing: "0.16em",
                       fontWeight: 700,
                       padding: "5px 10px",
                       fontFamily: "system-ui, sans-serif",
-                      borderLeft: "2px solid rgba(201,169,110,0.4)",
+                      borderLeft: "2px solid rgba(255,255,255,0.4)",
                     }}>
                       SOLD
                     </span>
                   </div>
                 )}
                 <div style={{ position: "absolute", bottom: 24, left: 24, right: 24 }}>
-                  <div style={{ fontSize: 9, letterSpacing: "0.18em", color: "rgba(201,169,110,0.75)", marginBottom: 6, fontFamily: "system-ui, sans-serif" }}>
+                  <div style={{ fontSize: 9, letterSpacing: "0.18em", color: "rgba(255,255,255,0.75)", marginBottom: 6, fontFamily: "system-ui, sans-serif" }}>
                     {listing.label}
                   </div>
                   <div style={{
                     fontFamily: "var(--font-display), Georgia, serif",
                     fontSize: "clamp(18px, 2vw, 24px)",
                     fontWeight: 300,
-                    color: "#FAFAF8",
+                    color: "#F8F8F8",
                     lineHeight: 1,
                     marginBottom: 4,
                   }}>

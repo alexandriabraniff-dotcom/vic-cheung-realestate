@@ -22,7 +22,7 @@ const testimonials = [
 export default function Testimonials() {
   return (
     <section id="testimonials" style={{
-      background: "#0B1628",
+      background: "#0A0A0A",
       padding: "clamp(60px, 10vw, 120px) 10vw",
     }}>
       <div style={{ maxWidth: 800, margin: "0 auto" }}>
@@ -37,7 +37,7 @@ export default function Testimonials() {
           }}>
             VIA GOOGLE REVIEWS
           </div>
-          <div style={{ width: 1, height: 52, background: "linear-gradient(to bottom, rgba(201,169,110,0.4), transparent)", margin: "0 auto" }} />
+          <div style={{ width: 1, height: 52, background: "linear-gradient(to bottom, rgba(255,255,255,0.4), transparent)", margin: "0 auto" }} />
         </div>
 
         {/* Pull quotes stacked */}
@@ -48,7 +48,7 @@ export default function Testimonials() {
                 fontFamily: "var(--font-display), Georgia, serif",
                 fontSize: "clamp(18px, 2.2vw, 26px)",
                 fontWeight: 300,
-                color: "#FAFAF8",
+                color: "#F8F8F8",
                 lineHeight: 1.7,
                 fontStyle: "italic",
                 margin: "0 0 28px 0",
@@ -57,13 +57,13 @@ export default function Testimonials() {
               </p>
               <div style={{ display: "flex", justifyContent: "center", gap: 4, marginBottom: 14 }}>
                 {Array.from({ length: t.stars }).map((_, s) => (
-                  <span key={s} style={{ color: "#C9A96E", fontSize: 11 }}>★</span>
+                  <span key={s} style={{ color: "#FFFFFF", fontSize: 11 }}>★</span>
                 ))}
               </div>
               <div style={{
                 fontSize: 12,
                 fontWeight: 600,
-                color: "#FAFAF8",
+                color: "#F8F8F8",
                 letterSpacing: "0.1em",
                 fontFamily: "system-ui, sans-serif",
               }}>
@@ -82,7 +82,7 @@ export default function Testimonials() {
                 <div style={{
                   width: 40,
                   height: 1,
-                  background: "rgba(201,169,110,0.2)",
+                  background: "rgba(255,255,255,0.2)",
                   margin: "52px auto 0",
                 }} />
               )}

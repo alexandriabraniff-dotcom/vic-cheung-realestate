@@ -6,7 +6,7 @@ export default function Hero() {
   const [imgError, setImgError] = useState(false);
 
   return (
-    <section id="hero" className="hero-grid" style={{ minHeight: "100vh" }}>
+    <section id="hero" style={{ minHeight: "100vh", display: "grid", gridTemplateColumns: "50% 50%" }}>
       {/* Left: Agent Portrait */}
       <div className="hero-portrait" style={{ position: "relative", overflow: "hidden" }}>
         {!imgError ? (
@@ -21,7 +21,7 @@ export default function Hero() {
             width: "100%",
             height: "100%",
             minHeight: "inherit",
-            background: "#0D1F35",
+            background: "#111111",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
@@ -31,12 +31,12 @@ export default function Hero() {
             <div style={{
               width: 80,
               height: 80,
-              border: "1px solid rgba(201,169,110,0.4)",
+              border: "1px solid rgba(255,255,255,0.4)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
             }}>
-              <svg width="40" height="40" fill="none" stroke="#C9A96E" strokeWidth="1" viewBox="0 0 24 24">
+              <svg width="40" height="40" fill="none" stroke="#FFFFFF" strokeWidth="1" viewBox="0 0 24 24">
                 <circle cx="12" cy="8" r="4" />
                 <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
               </svg>
@@ -44,7 +44,7 @@ export default function Hero() {
             <div style={{
               fontSize: 10,
               letterSpacing: "0.2em",
-              color: "rgba(201,169,110,0.5)",
+              color: "rgba(255,255,255,0.5)",
               fontFamily: "system-ui, sans-serif",
               textAlign: "center",
               lineHeight: 1.8,
@@ -61,8 +61,8 @@ export default function Hero() {
           left: 40,
           width: 60,
           height: 60,
-          borderBottom: "1px solid rgba(201,169,110,0.5)",
-          borderLeft: "1px solid rgba(201,169,110,0.5)",
+          borderBottom: "1px solid rgba(255,255,255,0.5)",
+          borderLeft: "1px solid rgba(255,255,255,0.5)",
           pointerEvents: "none",
         }} />
 
@@ -71,11 +71,11 @@ export default function Hero() {
           position: "absolute",
           bottom: 40,
           right: 0,
-          background: "#0B1628",
+          background: "#0A0A0A",
           padding: "12px 20px",
-          borderLeft: "2px solid #C9A96E",
+          borderLeft: "2px solid #FFFFFF",
         }}>
-          <div style={{ fontSize: 9, letterSpacing: "0.2em", color: "#C9A96E", fontFamily: "system-ui, sans-serif" }}>
+          <div style={{ fontSize: 9, letterSpacing: "0.2em", color: "#FFFFFF", fontFamily: "system-ui, sans-serif" }}>
             TEAM UPHAUS
           </div>
           <div style={{ fontSize: 9, letterSpacing: "0.15em", color: "rgba(250,250,248,0.45)", marginTop: 3, fontFamily: "system-ui, sans-serif" }}>
@@ -86,7 +86,7 @@ export default function Hero() {
 
       {/* Right: Content Panel */}
       <div style={{
-        background: "#0B1628",
+        background: "#0A0A0A",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
@@ -100,13 +100,13 @@ export default function Hero() {
           top: "15%",
           bottom: "15%",
           width: 1,
-          background: "linear-gradient(to bottom, transparent, rgba(201,169,110,0.3), transparent)",
+          background: "linear-gradient(to bottom, transparent, rgba(255,255,255,0.3), transparent)",
         }} />
 
         <div style={{
           fontSize: 10,
           letterSpacing: "0.25em",
-          color: "#C9A96E",
+          color: "#FFFFFF",
           fontWeight: 600,
           marginBottom: 32,
           fontFamily: "system-ui, sans-serif",
@@ -118,13 +118,13 @@ export default function Hero() {
           fontFamily: "var(--font-display), Georgia, serif",
           fontSize: "clamp(48px, 5.5vw, 80px)",
           fontWeight: 300,
-          color: "#FAFAF8",
+          color: "#F8F8F8",
           lineHeight: 1.05,
           marginBottom: 32,
           letterSpacing: "-0.01em",
         }}>
           Vic<br />
-          <em style={{ fontStyle: "italic", color: "#C9A96E" }}>Cheung</em>
+          <em style={{ fontStyle: "italic", color: "#FFFFFF" }}>Cheung</em>
         </div>
 
         <p style={{
@@ -140,7 +140,7 @@ export default function Hero() {
 
         {/* Search bar */}
         <div style={{
-          border: "1px solid rgba(201,169,110,0.2)",
+          border: "1px solid rgba(255,255,255,0.2)",
           display: "flex",
           alignItems: "center",
           marginBottom: 28,
@@ -156,14 +156,14 @@ export default function Hero() {
               outline: "none",
               padding: "14px 20px",
               fontSize: 13,
-              color: "#FAFAF8",
+              color: "#F8F8F8",
               fontFamily: "system-ui, sans-serif",
               letterSpacing: "0.04em",
               minWidth: 0,
             }}
           />
           <button style={{
-            background: "#C9A96E",
+            background: "#FFFFFF",
             border: "none",
             padding: "14px 20px",
             cursor: "pointer",
@@ -172,7 +172,7 @@ export default function Hero() {
             justifyContent: "center",
             flexShrink: 0,
           }}>
-            <svg width="15" height="15" fill="none" stroke="#0B1628" strokeWidth="2.2" viewBox="0 0 24 24">
+            <svg width="15" height="15" fill="none" stroke="#0A0A0A" strokeWidth="2.2" viewBox="0 0 24 24">
               <circle cx="11" cy="11" r="8" />
               <path d="M21 21l-4.35-4.35" />
             </svg>
@@ -182,8 +182,8 @@ export default function Hero() {
         {/* CTAs */}
         <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
           <a href="#contact" style={{
-            background: "#C9A96E",
-            color: "#0B1628",
+            background: "#FFFFFF",
+            color: "#0A0A0A",
             padding: "14px 28px",
             fontSize: 11,
             letterSpacing: "0.14em",
@@ -195,8 +195,8 @@ export default function Hero() {
             WORK WITH VIC
           </a>
           <a href="#listings" style={{
-            border: "1px solid rgba(201,169,110,0.35)",
-            color: "#C9A96E",
+            border: "1px solid rgba(255,255,255,0.35)",
+            color: "#FFFFFF",
             padding: "14px 28px",
             fontSize: 11,
             letterSpacing: "0.14em",
@@ -213,12 +213,12 @@ export default function Hero() {
         <div style={{
           marginTop: 52,
           paddingTop: 32,
-          borderTop: "1px solid rgba(201,169,110,0.12)",
+          borderTop: "1px solid rgba(255,255,255,0.12)",
         }}>
           <div style={{
             fontSize: 9,
             letterSpacing: "0.2em",
-            color: "rgba(201,169,110,0.6)",
+            color: "rgba(255,255,255,0.6)",
             fontFamily: "system-ui, sans-serif",
             marginBottom: 16,
           }}>
@@ -246,12 +246,12 @@ export default function Hero() {
                   alignItems: "center",
                   textDecoration: "none",
                   background: "rgba(255,255,255,0.04)",
-                  border: "1px solid rgba(201,169,110,0.1)",
+                  border: "1px solid rgba(255,255,255,0.1)",
                   padding: "8px 10px",
                   transition: "border-color 0.2s",
                 }}
-                onMouseOver={e => (e.currentTarget.style.borderColor = "rgba(201,169,110,0.4)")}
-                onMouseOut={e => (e.currentTarget.style.borderColor = "rgba(201,169,110,0.1)")}
+                onMouseOver={e => (e.currentTarget.style.borderColor = "rgba(255,255,255,0.4)")}
+                onMouseOut={e => (e.currentTarget.style.borderColor = "rgba(255,255,255,0.1)")}
               >
                 <img
                   src={listing.image}
@@ -269,7 +269,7 @@ export default function Hero() {
                     fontFamily: "var(--font-display), Georgia, serif",
                     fontSize: 14,
                     fontWeight: 400,
-                    color: "#FAFAF8",
+                    color: "#F8F8F8",
                     lineHeight: 1.1,
                     whiteSpace: "nowrap",
                     overflow: "hidden",

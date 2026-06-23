@@ -22,28 +22,28 @@ export default function Services() {
 
   return (
     <section id="services" style={{
-      background: "#0B1628",
+      background: "#0A0A0A",
       padding: "120px 10vw",
     }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-        <div style={{ fontSize: 10, letterSpacing: "0.22em", color: "#C9A96E", fontWeight: 600, marginBottom: 20, fontFamily: "system-ui, sans-serif" }}>
+        <div style={{ fontSize: 10, letterSpacing: "0.22em", color: "#FFFFFF", fontWeight: 600, marginBottom: 20, fontFamily: "system-ui, sans-serif" }}>
           SERVICES
         </div>
         <h2 style={{
           fontFamily: "var(--font-display), Georgia, serif",
           fontSize: "clamp(32px, 3.5vw, 52px)",
           fontWeight: 400,
-          color: "#FAFAF8",
+          color: "#F8F8F8",
           margin: "0 0 64px 0",
           lineHeight: 1.15,
         }}>
           What Vic brings<br />to the table.
         </h2>
 
-        <div className="three-col-grid" style={{ gap: 1, background: "rgba(201,169,110,0.15)" }}>
+        <div className="three-col-grid" style={{ gap: 1, background: "rgba(255,255,255,0.15)" }}>
           {services.map((s, i) => (
             <div key={i} style={{
-              background: "#0B1628",
+              background: "#0A0A0A",
               padding: "48px 40px",
               position: "relative",
             }}>
@@ -51,7 +51,7 @@ export default function Services() {
                 fontFamily: "var(--font-display), Georgia, serif",
                 fontSize: 64,
                 fontWeight: 300,
-                color: "rgba(201,169,110,0.15)",
+                color: "rgba(255,255,255,0.15)",
                 lineHeight: 1,
                 marginBottom: 24,
               }}>
@@ -61,7 +61,7 @@ export default function Services() {
                 fontFamily: "var(--font-display), Georgia, serif",
                 fontSize: 24,
                 fontWeight: 400,
-                color: "#FAFAF8",
+                color: "#F8F8F8",
                 margin: "0 0 16px 0",
                 lineHeight: 1.3,
               }}>
@@ -81,8 +81,8 @@ export default function Services() {
                   <span key={tag} style={{
                     fontSize: 10,
                     letterSpacing: "0.1em",
-                    color: "#C9A96E",
-                    border: "1px solid rgba(201,169,110,0.3)",
+                    color: "#FFFFFF",
+                    border: "1px solid rgba(255,255,255,0.3)",
                     padding: "4px 10px",
                     fontFamily: "system-ui, sans-serif",
                   }}>

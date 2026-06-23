@@ -22,18 +22,18 @@ export default function Credentials() {
 
   return (
     <section id="credentials" style={{
-      background: "#F4F2EE",
+      background: "#F0F0F0",
       padding: "120px 10vw",
     }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-        <div style={{ fontSize: 10, letterSpacing: "0.22em", color: "#C9A96E", fontWeight: 600, marginBottom: 20, fontFamily: "system-ui, sans-serif" }}>
+        <div style={{ fontSize: 10, letterSpacing: "0.22em", color: "#0A0A0A", fontWeight: 600, marginBottom: 20, fontFamily: "system-ui, sans-serif" }}>
           CREDENTIALS
         </div>
         <h2 style={{
           fontFamily: "var(--font-display), Georgia, serif",
           fontSize: "clamp(32px, 3.5vw, 52px)",
           fontWeight: 400,
-          color: "#0B1628",
+          color: "#0A0A0A",
           margin: "0 0 64px 0",
           lineHeight: 1.15,
         }}>
@@ -45,23 +45,23 @@ export default function Credentials() {
             <div key={i} style={{
               background: "#FFFFFF",
               padding: "48px 40px",
-              borderTop: "2px solid #C9A96E",
+              borderTop: "2px solid #0A0A0A",
               position: "relative",
             }}>
               <div style={{
                 fontFamily: "var(--font-display), Georgia, serif",
                 fontSize: 64,
                 fontWeight: 300,
-                color: "#0B1628",
+                color: "#0A0A0A",
                 lineHeight: 1,
               }}>
                 {c.stat}
-                {c.unit && <span style={{ fontSize: 28, color: "#C9A96E" }}>{c.unit}</span>}
+                {c.unit && <span style={{ fontSize: 28, color: "#0A0A0A" }}>{c.unit}</span>}
               </div>
               <div style={{
                 fontSize: 11,
                 letterSpacing: "0.14em",
-                color: "#C9A96E",
+                color: "#0A0A0A",
                 fontWeight: 600,
                 margin: "16px 0 12px",
                 fontFamily: "system-ui, sans-serif",
