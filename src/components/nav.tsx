@@ -71,10 +71,12 @@ export default function Nav() {
                 color: "rgba(255,255,255,0.8)",
                 textDecoration: "none",
                 fontWeight: 500,
-                transition: "color 0.2s",
+                transition: "color 0.2s, border-color 0.2s",
+                borderBottom: "1px solid transparent",
+                paddingBottom: 2,
               }}
-              onMouseOver={e => (e.currentTarget.style.color = "#FFFFFF")}
-              onMouseOut={e => (e.currentTarget.style.color = "rgba(255,255,255,0.8)")}
+              onMouseOver={e => { e.currentTarget.style.color = "#FFFFFF"; e.currentTarget.style.borderBottomColor = "#FFFFFF"; }}
+              onMouseOut={e => { e.currentTarget.style.color = "rgba(255,255,255,0.8)"; e.currentTarget.style.borderBottomColor = "transparent"; }}
             >
               {l.label.toUpperCase()}
             </a>
