@@ -7,52 +7,20 @@ export default function Hero() {
 
   return (
     <section id="hero" style={{ minHeight: "100vh", display: "grid", gridTemplateColumns: "50% 50%" }}>
-      {/* Left: Agent Portrait */}
+      {/* Left: Agent Portrait — replace src with /vic.jpg when available */}
       <div className="hero-portrait" style={{ position: "relative", overflow: "hidden" }}>
-        {!imgError ? (
-          <img
-            src="/vic.jpg"
-            alt="Vic Cheung"
-            onError={() => setImgError(true)}
-            style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-          />
-        ) : (
-          <div style={{
-            width: "100%",
-            height: "100%",
-            minHeight: "inherit",
-            background: "#111111",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: 16,
-          }}>
-            <div style={{
-              width: 80,
-              height: 80,
-              border: "1px solid rgba(255,255,255,0.4)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}>
-              <svg width="40" height="40" fill="none" stroke="#FFFFFF" strokeWidth="1" viewBox="0 0 24 24">
-                <circle cx="12" cy="8" r="4" />
-                <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
-              </svg>
-            </div>
-            <div style={{
-              fontSize: 10,
-              letterSpacing: "0.2em",
-              color: "rgba(255,255,255,0.5)",
-              fontFamily: "system-ui, sans-serif",
-              textAlign: "center",
-              lineHeight: 1.8,
-            }}>
-              PLACE VIC&apos;S PORTRAIT<br />AT /public/vic.jpg
-            </div>
-          </div>
-        )}
+        <img
+          src="/vic.jpg"
+          alt="Vic Cheung"
+          onError={e => { (e.currentTarget as HTMLImageElement).src = "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=1000&q=85"; }}
+          style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+        />
+        <div style={{
+          position: "absolute",
+          inset: 0,
+          background: "linear-gradient(to right, transparent 55%, rgba(10,10,10,0.5) 100%)",
+          pointerEvents: "none",
+        }} />
 
         {/* Corner accent */}
         <div style={{
