@@ -131,6 +131,10 @@ section[id] {
   text-overflow: ellipsis;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 .nav-desktop-links {
   display: flex;
   gap: 36px;
@@ -244,6 +248,14 @@ section[id] {
   /* ── Footer ── */
   .footer-cols {
     gap: 32px !important;
+  }
+
+  /* ── Banner: allow wrapping on mobile ── */
+  .designer-banner {
+    white-space: normal !important;
+    text-overflow: unset !important;
+    overflow: visible !important;
+    line-height: 1.5 !important;
   }
 
   /* ── Testimonials: show scroll hint ── */

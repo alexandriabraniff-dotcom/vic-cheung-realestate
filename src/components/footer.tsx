@@ -12,7 +12,7 @@ export default function Footer() {
             <div style={{ fontFamily: "var(--font-display), Georgia, serif", fontSize: 22, fontWeight: 500, color: "#F8F8F8", letterSpacing: "0.05em" }}>
               VIC CHEUNG
             </div>
-            <div style={{ fontSize: 12, color: "#FFFFFF", letterSpacing: "0.18em", marginTop: 4, fontFamily: "system-ui, sans-serif" }}>
+            <div style={{ fontSize: 12, color: "#FFFFFF", letterSpacing: "0.18em", marginTop: 4, fontFamily: "system-ui, sans-serif", lineHeight: 1.6 }}>
               REALTOR® | TEAM UPHAUS | RENT IT FURNISHED REALTY
             </div>
             <p style={{ fontSize: 13, color: "rgba(250,250,248,0.4)", marginTop: 16, maxWidth: 300, lineHeight: 1.7, fontFamily: "system-ui, sans-serif" }}>

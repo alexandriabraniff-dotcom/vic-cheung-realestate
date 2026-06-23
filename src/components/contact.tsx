@@ -92,7 +92,7 @@ export default function Contact() {
             </div>
             <div style={{ marginBottom: 36 }}>
               <div style={{ fontSize: 12, letterSpacing: "0.18em", color: "#FFFFFF", fontWeight: 600, marginBottom: 10, fontFamily: "system-ui, sans-serif" }}>EMAIL</div>
-              <div style={{ fontSize: 18, color: "#F8F8F8", fontFamily: "var(--font-display), Georgia, serif" }}>vic@vancity.realestate</div>
+              <div style={{ fontSize: 18, color: "#F8F8F8", fontFamily: "var(--font-display), Georgia, serif", wordBreak: "break-all" }}>vic@vancity.realestate</div>
             </div>
             <div style={{ marginBottom: 48 }}>
               <div style={{ fontSize: 12, letterSpacing: "0.18em", color: "#FFFFFF", fontWeight: 600, marginBottom: 10, fontFamily: "system-ui, sans-serif" }}>OFFICE</div>
