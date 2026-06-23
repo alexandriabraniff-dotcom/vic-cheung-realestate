@@ -77,6 +77,7 @@ export default function Hero() {
           fontWeight: 300,
           color: "#F8F8F8",
           lineHeight: 1.05,
+          marginTop: 64,
           marginBottom: 32,
           letterSpacing: "-0.01em",
         }}>
