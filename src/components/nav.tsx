@@ -1,19 +1,8 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export default function Nav() {
-  const [pastHero, setPastHero] = useState(false);
   const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => {
-      const heroHeight = window.innerHeight;
-      setPastHero(window.scrollY > heroHeight * 0.85);
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   const links = [
     { label: "About", href: "#about" },
@@ -30,9 +19,8 @@ export default function Nav() {
       left: 0,
       right: 0,
       zIndex: 1000,
-      background: pastHero ? "#0A0A0A" : "transparent",
-      borderBottom: pastHero ? "1px solid rgba(255,255,255,0.08)" : "none",
-      transition: "background 0.35s ease, border-color 0.35s ease",
+      background: "transparent",
+      borderBottom: "none",
     }}>
       <div style={{
         maxWidth: 1280,
